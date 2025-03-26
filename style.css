@@ -1,0 +1,493 @@
+@charset "UTF-8";
+/* Importação das fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    /* Paleta de Pretos (p) */
+    --p1: #000000;
+    --p2: #1B1B1B;
+    --p3: #262626;
+    --p4: #3B3B3B;
+    --p5: #4D4D4D;
+    --p6: #656565;
+    --w:  #FFFFFF;
+
+    /* Paleta de Cores (c) */
+    --c1: #1F0540;
+    --c2: #2B0C4C;
+    --c3: #4E2565;
+    --c4: #582C6C;
+    --c5: #622C86;
+    --c6: #AB52D2;
+
+    /* Gradientes */
+    --gradient1: linear-gradient(180deg, var(--c5) 59.5%, var(--c2) 100%);
+    --gradient2: linear-gradient(180deg, var(--c6), var(--c2));
+
+    /* Fontes */
+    --font-poppins: 'Poppins', sans-serif;
+    --font-roboto-mono: 'Roboto Mono', monospace;
+    --font-inter: 'Inter', sans-serif;
+    --font-principal: var(--font-poppins);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ELEMENTOS */
+.diferencial {
+  width: 12px;
+  height: 4px;
+  background: var(--c6);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+
+/* HEADER */
+.header {
+    width: 100%;
+    min-height: 7.5rem;
+    background: var(--gradient1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    z-index: 1000;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.logo {
+    font-family: var(--font-poppins);
+    font-weight: bold;
+    font-size: 48px;
+    color: var(--w);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    font-family: var(--font-poppins);
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--w);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -6%;
+    width: 92%;
+    height: 2px;
+    background: var(--w);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* BANNER */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 28rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/event-first-section.png') center/cover;
+    padding-top: 4rem;
+}
+
+.banner-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner-title {
+    font-family: var(--font-poppins);
+    font-weight: bolder;
+    font-size: 54px;
+    color: var(--w);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.banner-title::after {
+  content: '';
+  position: absolute;
+  left: 0; /* Alinhado à esquerda no desktop */
+  bottom: -.1rem;
+  width: 270px;
+  height: 2px;
+  background: linear-gradient(to left, var(--c6), var(--c2));
+  border-radius: 2px;
+  transition: all 0.3s ease; /* Adicionei transição suave */
+}
+
+.banner-text {
+    font-family: var(--font-poppins);
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: var(--w);
+    max-width: 528px;
+    margin-top: -1rem;
+}
+
+.mercap-logo img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(98, 44, 134, 0.884)); /* Efeito opcional */
+    animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(-1rem); }
+    50% { transform: translateY(-2rem); }
+}
+
+/* Divisória */
+
+/* DIVISÓRIA COM CÍRCULO */
+.section-divider {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.divisor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.divisor-circle {
+  width: 40px;
+  height: 40px;
+  background-color: var(--w);
+  filter: drop-shadow(0 0 5px var(--p6));
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.divisor-icon {
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+}
+
+/* SLIDER */
+
+/* SEÇÃO EMPRESAS PARCEIRAS - ATUALIZADO */
+.partners-section {
+  margin: 80px 0;
+}
+.partners-title {
+  font-family: var(--font-poppins);
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--p2);
+  margin-bottom: 60px;
+}
+
+.carrossel-container {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.carrossel-track {
+  display: flex;
+  animation: carrossel 15s linear infinite;
+  gap: 40px;
+  width: fit-content;
+}
+
+.carrossel-item {
+  flex: none;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+@keyframes carrossel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Novo cálculo */
+}
+
+/* SEÇÃO DE OBJETIVOS */
+.objectives-section {
+  padding: 4rem 0;
+  background: var(--w);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.objectives-header {
+  margin-left: 140px; /* Margem fixa à esquerda */
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title {
+  font-family: var(--font-poppins);
+  font-size: 3rem;
+  color: var(--p2);
+  position: relative;
+  left: 0;
+}
+.objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 0 140px; /* Mesma margem do header */
+}
+
+.objective-card {
+  background: var(--p6);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--p2);
+  transition: transform 0.3s ease;
+}
+
+.objective-card:hover {
+  transform: translateY(-5px);
+}
+
+.objective-card > .card-title {
+  font-family: var(--font-inter);
+  font-size: 1.5rem;
+  color: var(--p2);
+  margin-bottom: 1rem;
+}
+
+.objective-card > .card-text {
+  font-family: var(--font-roboto-mono);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+
+/* ===== RESPONSIVIDADE ===== */
+/* Tablet (768px a 1024px) */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 2.5rem;
+    min-height: 6rem;
+  }
+
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .banner {
+    height: 24rem;
+    padding-top: 6rem;
+  }
+
+  .banner-content {
+    padding: 0 2.5rem;
+  }
+
+  .banner-title {
+    font-size: 2.5rem;
+  }
+
+  .banner-text {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+  }
+
+  .mercap-logo {
+    width: 9rem;
+  }
+
+  .objectives-section {
+    padding: 4rem 5%;
+  }
+  .objectives-header,
+  .objectives-grid {
+    padding-left: 5%;
+    margin-left: 0;
+  }
+
+  .objectives-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    gap: 1.5rem;
+    padding: 0 80px;
+  }
+}
+  
+/* Celular (até 768px) */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1.5rem;
+    min-height: 5rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  /* Menu hamburguer seria adicionado aqui */
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none; /* Temporário - substituir por menu mobile */
+  }
+  
+  .banner {
+    height: auto;
+    min-height: 82vh;
+    padding: 5rem 0;
+  }
+
+  .banner-content {
+    flex-direction: column;
+    padding: 0 3rem;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .banner-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .banner-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12rem;
+  }
+  
+  .banner-text {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin-top: 0;
+    max-width: 100%;
+  }
+  
+  /* Faz o logo desaparecer em mobile */
+  .mercap-logo {
+    display: none;
+  }
+
+  /* Divisória - Tablet */
+  .section-divider {
+    display: none;
+  }
+
+  /* Empresas parceiras*/
+  .partners-section {
+    padding: 60px 0;
+  }
+  
+  .partners-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .partner-logo {
+    width: 150px;
+    height: 150px;
+    margin: 0 20px;
+  }
+  
+  .partners-slider-track {
+    animation-duration: 30s;
+  }
+  
+  .objectives-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .decorative-line {
+    width: 10px;
+    height: 3px;
+  }
+
+  .objectives-grid {
+    grid-template-columns: repeat(1, 1fr); /* 2 colunas */
+    gap: 1.5rem;
+    padding: 0 80px;
+  }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+  .banner-title {
+    font-size: 1.8rem;
+  }
+  .banner-title::after {
+    width: 10rem;
+  }
+  .section-divider {
+    display: none;
+  }
+
+  .partner-logo {
+    width: 120px;
+    height: 120px;
+    padding: 20px;
+  }
+
+  .objectives-section {
+    padding: 2rem 1rem;
+  }
+
+  .objectives-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
