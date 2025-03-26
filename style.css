@@ -249,7 +249,7 @@
   100% { transform: translateX(-50%); } /* Novo cálculo */
 }
 
-/* SEÇÃO DE OBJETIVOS */
+/* SEÇÃO OBJETIVOS */
 .objectives-section {
   padding: 4rem 0;
   background: var(--w);
@@ -272,7 +272,7 @@
 }
 .objectives-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 2fr);
   gap: 2rem;
   padding: 0 140px; /* Mesma margem do header */
 }
@@ -300,8 +300,62 @@
   font-family: var(--font-roboto-mono);
   font-size: 1rem;
   line-height: 1.6;
+  text-indent: 1rem;
 }
 
+/* SEÇÃO NOSSO DIFERENCIAL */
+.diferencial-section {
+  position: relative;
+  background: var(--p3);
+  padding: 8rem 140px 10rem;
+  margin: 100px 0;
+  overflow: visible;
+  z-index: 1;
+}
+
+.diferencial-container {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.diferencial-content {
+  position: relative;
+  width: 50%;
+  z-index: 2;
+}
+
+.diferencial-content h2 {
+  font-family: var(--font-poppins);
+  font-size: 3rem;
+  color: var(--w);
+  margin-bottom: 2rem;
+}
+
+.diferencial-text {
+  font-family: var(--font-roboto-mono);
+  color: var(--w);
+  opacity: 0.9;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* Imagem que vaza */
+.diferencial-image {
+  position: absolute;
+  width: 500px;
+  height: 780px;
+  top: -200px;
+  right: -80px;
+  z-index: 3;
+  filter: drop-shadow(-20px 20px 30px rgba(0,0,0,0.3));
+}
+
+.diferencial-image img {
+  width: 100%;  
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
 
 
 /* ===== RESPONSIVIDADE ===== */
@@ -455,6 +509,24 @@
     grid-template-columns: repeat(1, 1fr); /* 2 colunas */
     gap: 1.5rem;
     padding: 0 80px;
+  }
+
+  .diferencial-section {
+    padding: 4rem 40px 8rem;
+  }
+  
+  .diferencial-content {
+    width: 100%;
+  }
+  
+  .diferencial-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    right: 0;
+    top: 0;
+    margin-top: 3rem;
+    filter: none;
   }
 }
 
