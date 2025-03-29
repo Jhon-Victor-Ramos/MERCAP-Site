@@ -48,3 +48,65 @@ document.addEventListener('DOMContentLoaded', () => {
         startAnimation();
     });
 });
+
+// ANIMAÇÃO BANNER
+document.addEventListener('DOMContentLoaded', () => {
+    const titleElement = document.getElementById('animated-title');
+    const titleText = "MERCAP";
+    const animationDelay = 500; // Milissegundos entre cada letra
+
+    let charIndex = 0;
+
+    function typeCharacter() {
+        if (charIndex < titleText.length) {
+            titleElement.textContent += titleText.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeCharacter, animationDelay);
+        }
+    }
+    typeCharacter(); // Inicia a animação quando a página carrega
+});
+
+// ANIMAÇÃO NOSSOS PILARES
+document.addEventListener('DOMContentLoaded', () => {
+    const statsSection = document.querySelector('.pillars-section');
+    const stats = document.querySelectorAll('.stat-number');
+
+    if (!statsSection || stats.length === 0) return;
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            stats.forEach(stat => animateNumber(stat));
+            observer.unobserve(entry.target);
+        }
+    });
+    }, observerOptions);
+
+    observer.observe(statsSection);
+
+    function animateNumber(element) {
+        const startValue = 0;
+        const endValue = parseInt(element.dataset.target);
+        const duration = 2000;
+        let startTime = null;
+
+        const animation = (currentTime) => {
+            if (!startTime) startTime = currentTime;
+            const progress = currentTime - startTime;
+            const percentage = Math.min(progress / duration, 1);
+        
+            element.textContent = Math.floor(percentage * endValue);
+        
+            if (percentage < 1) {
+                requestAnimationFrame(animation);
+            } else {
+                element.textContent = endValue; // Garante o valor final exato
+            }
+        };
+        requestAnimationFrame(animation);
+    }
+});

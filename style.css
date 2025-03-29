@@ -110,62 +110,70 @@
 
 /* BANNER */
 .banner {
-    position: relative;
-    width: 100%;
-    height: 28rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/event-first-section.png') center/cover;
-    padding-top: 4rem;
+  position: relative;
+  width: 100%;
+  height: 28rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/event-first-section.png') center/cover;
+  padding-top: 4rem;
 }
 
 .banner-content {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 5rem 0;
-    display: flex;
-    justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 5rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.deco-square {
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  opacity: 50%;
+  max-width: 100px;
 }
 
 .banner-title {
-    font-family: var(--font-poppins);
-    font-weight: bolder;
-    font-size: 54px;
-    color: var(--w);
-    margin-bottom: 2rem;
-    position: relative;
+  font-family: var(--font-poppins);
+  font-weight: bolder;
+  font-size: 3.3rem;
+  color: var(--w);
+  margin-bottom: 2rem;
+  position: relative;
 }
 
 .banner-title::after {
-  content: '';
-  position: absolute;
-  left: 0; /* Alinhado à esquerda no desktop */
-  bottom: -.1rem;
-  width: 270px;
-  height: 2px;
-  background: linear-gradient(to left, var(--c6), var(--c2));
-  border-radius: 2px;
-  transition: all 0.3s ease; /* Adicionei transição suave */
+content: '';
+position: absolute;
+left: 0; /* Alinhado à esquerda no desktop */
+bottom: -.1rem;
+width: 270px;
+height: 2px;
+background: linear-gradient(to left, var(--c6), var(--c2));
+border-radius: 2px;
+transition: all 0.3s ease; /* Adicionei transição suave */
 }
 
 .banner-text {
-    font-family: var(--font-poppins);
-    font-weight: normal;
-    font-size: 1.2rem;
-    line-height: 2rem;
-    color: var(--w);
-    max-width: 528px;
-    margin-top: -1rem;
+  font-family: var(--font-poppins);
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: var(--w);
+  max-width: 528px;
+  margin-top: -1rem;
 }
 
 .mercap-logo img {
-    width: 100%;
-    height: auto;
-    filter: drop-shadow(0 0 5px rgba(98, 44, 134, 0.884)); /* Efeito opcional */
-    animation: float 8s ease-in-out infinite;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 5px rgba(98, 44, 134, 0.884)); /* Efeito opcional */
+  animation: float 8s ease-in-out infinite;
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(-1rem); }
-    50% { transform: translateY(-2rem); }
+  0%, 100% { transform: translateY(-1rem); }
+  50% { transform: translateY(-2rem); }
 }
 
 /* Divisória */
@@ -258,7 +266,7 @@
 }
 
 .objectives-header {
-  margin-left: 140px; /* Margem fixa à esquerda */
+  margin-left: 140px;
   margin-bottom: 3rem;
   position: relative;
 }
@@ -336,6 +344,7 @@
   color: var(--w);
   opacity: 0.9;
   line-height: 1.8;
+  letter-spacing: 1px;
   max-width: 600px;
 }
 
@@ -357,6 +366,80 @@
   border-radius: 4px;
 }
 
+/* SEÇÃO NOSSOS PILARES */
+.pillars-section {
+  padding: 3rem 140px;
+  background: var(--w);
+}
+
+.pillars-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.pillars-container img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(91, 44, 134, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.pillars-container img:hover {
+  transform: scale(1.02);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(235, 235, 235, 0.8);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(91, 44, 134, 0.12);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.stat-number {
+  font-family: var(--font-poppins);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--c6);
+  margin-bottom: 0.5rem;
+}
+
+.stat-title {
+  font-family: var(--font-inter);
+  font-size: 1.25rem;
+  color: var(--p2);
+  margin-bottom: 0.25rem;
+}
+
+.stat-desc {
+  font-family: var(--font-roboto-mono);
+  font-size: 0.9rem;
+  color: var(--p4);
+  line-height: 1.6;
+}
 
 /* ===== RESPONSIVIDADE ===== */
 /* Tablet (768px a 1024px) */
@@ -410,7 +493,24 @@
     gap: 1.5rem;
     padding: 0 80px;
   }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pillars-section {
+    padding: 6rem 80px;
+  }
+
+  .pillars-container {
+    gap: 2rem;
+  }
+  
+  .stat-card {
+    padding: 1.5rem;
+  }
 }
+
   
 /* Celular (até 768px) */
 @media (max-width: 768px) {
@@ -506,7 +606,7 @@
   }
 
   .objectives-grid {
-    grid-template-columns: repeat(1, 1fr); /* 2 colunas */
+    grid-template-columns: repeat(1, 1fr); /* 1 coluna */
     gap: 1.5rem;
     padding: 0 80px;
   }
@@ -527,6 +627,24 @@
     top: 0;
     margin-top: 3rem;
     filter: none;
+  }
+
+  .pillars-section {
+    padding: 4rem 40px;
+  }
+
+  .pillars-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
   }
 }
 
@@ -549,17 +667,63 @@
   }
 
   .objectives-section {
-    padding: 2rem 1rem;
+    width: 100%;
+  }
+
+  .objectives-section {
+    padding: 2rem 20px; /* Reduz padding vertical e horizontal */
   }
 
   .objectives-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin-left: 20px; /* Alinhamento com o conteúdo */
+  }
+
+  .diferencial {
+    margin-left: 0;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  .objectives-grid {
+    gap: 1rem;
+    padding: 0 10px;
+  }
+
+  .objective-card {
+    padding: 1.25rem;
+    min-width: unset;
   }
 
   .section-title {
     font-size: 1.8rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 2rem auto;
+  }
+  
+  .stat-card {
+    padding: 1.5rem;
+  }
+
+  .pillars-section {
+    padding: 3rem 20px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-icon {
+    font-size: 2rem;
+  }
+  
+  .stat-title {
+    font-size: 1.1rem;
   }
 }
