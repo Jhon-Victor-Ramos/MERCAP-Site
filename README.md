@@ -34,6 +34,7 @@ Esse é o site oficial do evento anual MERCAP, uma iniciativa que conecta jovens
 * [ ] Finalizar responsividade
 * [ ] Otimizar imagens e melhorar performance
 * [ ] Consertar animação do título do banner
+* [ ] Consertar erro de zoom out na responsividade em celulares
 * Mais passos pela frente
 
 ## Licença
