@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercap - Home</title>
+    <title>Mercap</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
@@ -148,34 +148,48 @@
             </div>
         </div>
     </section>
-
+    
     <!-- SEÇÃO EXPERIÊNCIA DE CLIENTES -->
-    <section class="testimonials-section">
-        <!-- Cliente 1 -->
-        <div class="testimonial-card">
-            <div class="client-photo-container">
-                <img src="images/client1.jpg" alt="Mário Ventura, Sócio da Orbit Talent" class="client-photo">
-            </div>
-            
-            <div class="testimonial-content">
-                <blockquote class="testimonial-text">
-                    “Minha experiência como empresa parceria do Mercap foi incrível! O contato do time pré evento, a organização e toda infraestrutura preparada para receber as empresas e alunos foi espetacular. Tivemos um excelente aproveito tanto de público como também de alunos qualificados para nosso banco de talentos. Recomendo sem sobra de dúvidas e com certeza a Orbit participará mais vezes! O Mercap é o evento do futuro do trabalho!”
+    <section class="clientes">
+        <span class="diferencial"></span>
+        <h2 class="clientes__titulo">Experiência de antigos clientes</h2>
+        <!-- Container principal dos depoimentos -->
+        <div class="clientes__container">
+            <!-- Card individual -->
+            <article class="cliente-card">
+            <!-- Foto do cliente -->
+            <div class="cliente-card__foto"></div>
+        
+            <!-- Bloco de conteúdo -->
+            <div class="cliente-card__conteudo">
+                <!-- Depoimento -->
+                <blockquote class="cliente-card__texto">
+                “Minha experiência como empresa parceria do Mercap foi incrível! O contato do time pré evento...”
                 </blockquote>
-
-                <div class="client-info">
-                    <div class="client-details">
-                        <svg class="client-icon" aria-hidden="true">
-                            <use xlink:href="images/client-icon.svg#icon"></use>
-                        </svg>
-                        <div>
-                            <p class="client-name">Mário Ventura</p>
-                            <p class="client-role">Sócio da Orbit Talent</p>
-                        </div>
-                    </div>
+        
+                <!-- Identificação -->
+                <div class="cliente-card__info">
+                <p class="cliente-card__nome">Mairo Ventura</p>
+                <p class="cliente-card__cargo">Sócio da Orbit Talent</p>
                 </div>
             </div>
+            </article>
+        
+            <!-- Segundo card (invertido) -->
+            <article class="cliente-card cliente-card--invertido">
+            <div class="cliente-card__foto"></div>
+            <div class="cliente-card__conteudo">
+                <blockquote class="cliente-card__texto">
+                “A Ambev teve uma experiência positiva no MERCAP 2023, interagindo com estudantes...”
+                </blockquote>
+                <div class="cliente-card__info">
+                <p class="cliente-card__nome">Ana Catarina Leão</p>
+                <p class="cliente-card__cargo">Gerente de Gente e Gestão da Ambev</p>
+                </div>
+            </div>
+            </article>
         </div>
-    </section>
+        </section>
 
     <script src="app.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
