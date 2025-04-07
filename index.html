@@ -48,7 +48,8 @@
 
     <!-- SEÇÃO EMPRESAS PARCEIRAS -->
     <section class="partners-section">
-        <h2 class="partners-title">As melhores estão aqui!</h2>
+        <!-- H2 agora usa a classe padronizada 'section-title' -->
+        <h2 class="section-title">As melhores estão aqui!</h2>
         <div class="carrossel-container">
             <div class="carrossel-track">
                 <div class="carrossel-item"></div>
@@ -61,8 +62,10 @@
 
     <!-- SEÇÃO OBJETIVOS -->
     <section class="objectives-section">
-        <div class="objectives-header">
+        <!-- O container do header agora usa a classe padronizada 'section-header' -->
+        <div class="section-header">
             <span class="diferencial"></span>
+            <!-- H2 já usava 'section-title' -->
             <h2 class="section-title">Objetivos</h2>
         </div>
         <div class="objectives-grid">
@@ -94,9 +97,12 @@
         <div class="diferencial-container">
             <!-- Conteúdo Textual -->
             <div class="diferencial-content">
-                <span class="diferencial"></span> <!-- Elemento decorativo -->
-                <h2>Nosso diferencial</h2>
-            
+                <!-- Adicionado um 'section-header' para agrupar span e h2, como nas outras seções -->
+                <div class="section-header">
+                    <span class="diferencial"></span>
+                    <!-- H2 agora usa a classe padronizada 'section-title' -->
+                    <h2 class="section-title">Nosso diferencial</h2>
+                </div>
                 <div class="diferencial-text">
                     <p>O MERCAP se distingue por promover um ambiente de inovação e empreendedorismo, reunindo empresas que buscam mentes criativas e jovens que desejam construir seus próprios caminhos. Mais do que um simples encontro, a MERCAP é uma plataforma de lançamento para novas ideias, projetos e <i>startups</i>, incentivando a colaboração, o <i>networking</i> e a busca por soluções inovadoras para os desafios do mercado.</p>
                 </div>
@@ -110,8 +116,10 @@
 
     <!-- SEÇÃO NOSSOS PILARES -->
     <section class="pillars-section">
-        <div class="pillars-header">
+        <!-- Container do header já usava 'section-header' -->
+        <div class="section-header">
             <span class="diferencial"></span>
+            <!-- H2 já usava 'section-title' -->
             <h2 class="section-title">Nossos pilares</h2>
         </div>
         <div class="pillars-container">
@@ -148,50 +156,114 @@
             </div>
         </div>
     </section>
-    
-    <!-- SEÇÃO EXPERIÊNCIA DE CLIENTES -->
-    <section class="clientes">
-        <span class="diferencial"></span>
-        <h2 class="clientes__titulo">Experiência de antigos clientes</h2>
-        <!-- Container principal dos depoimentos -->
-        <div class="clientes__container">
-            <!-- Card individual -->
-            <article class="cliente-card">
-            <!-- Foto do cliente -->
-            <div class="cliente-card__foto"></div>
-        
-            <!-- Bloco de conteúdo -->
-            <div class="cliente-card__conteudo">
-                <!-- Depoimento -->
-                <blockquote class="cliente-card__texto">
-                “Minha experiência como empresa parceria do Mercap foi incrível! O contato do time pré evento...”
-                </blockquote>
-        
-                <!-- Identificação -->
-                <div class="cliente-card__info">
-                <p class="cliente-card__nome">Mairo Ventura</p>
-                <p class="cliente-card__cargo">Sócio da Orbit Talent</p>
-                </div>
-            </div>
-            </article>
-        
-            <!-- Segundo card (invertido) -->
-            <article class="cliente-card cliente-card--invertido">
-            <div class="cliente-card__foto"></div>
-            <div class="cliente-card__conteudo">
-                <blockquote class="cliente-card__texto">
-                “A Ambev teve uma experiência positiva no MERCAP 2023, interagindo com estudantes...”
-                </blockquote>
-                <div class="cliente-card__info">
-                <p class="cliente-card__nome">Ana Catarina Leão</p>
-                <p class="cliente-card__cargo">Gerente de Gente e Gestão da Ambev</p>
-                </div>
-            </div>
-            </article>
-        </div>
-        </section>
 
+    <!-- SEÇÃO EXPERIÊNCIA DE CLIENTES    -->
+    <section class="clients-section">
+        <div class="section-header-wrapper">
+            <div class="section-header">
+                <span class="diferencial"></span>
+                <h2 class="section-title">Experiência de antigos clientes</h2>
+            </div>
+        </div>
+        <div class="testimonials-background">
+            <div class="testimonials-container">
+                <!-- Depoimento 1: Mairo Ventura -->
+                <article class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="images/mairo-ventura.png" alt="Foto de Mairo Ventura, Sócio da Orbit Talent">
+                    </div>
+                    <div class="testimonial-content">
+                        <blockquote>
+                            <p>Minha experiência como empresa parceria do Mercap foi incrível! O contato do time pré evento, a organização e toda infraestrutura preparada para receber as empresas e alunos foi espetacular. Tivemos um excelente aproveito tanto de público como também de alunos qualificados para nosso banco de talentos. Recomendo sem sobra de dúvidas e com certeza a Orbit participará mais vezes! O Mercap é o evento do futuro do trabalho!</p>
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <img class="author-icon" src="images/Person.svg" alt="Ícone de pessoa">
+                            <p class="author-info">Mairo Ventura, Sócio da Orbit Talent</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Depoimento 2: Ana Catarina Leão -->
+                <article class="testimonial-card testimonial-card--reversed">
+                    <div class="testimonial-image">
+                        <img src="images/mairo-ventura.png" alt="Foto de Ana Catarina Leão, Gerente de Gente e Gestão da Ambev">
+                    </div>
+                    <div class="testimonial-content">
+                        <blockquote>
+                            <p>A Ambev teve uma experiência positiva no MERCAP 2023, interagindo com estudantes e divulgando sua cultura focada em inovação e desenvolvimento. A empresa vê o evento como crucial para conectar academia e mercado, inspirar líderes e fortalecer laços, mais do que apenas recrutar. A Ambev pretende continuar participando para apoiar o desenvolvimento profissional dos estudantes.</p>
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <img class="author-icon" src="images/Person.svg" alt="Ícone de pessoa">
+                            <p class="author-info">Ana Catarina Leão, Gerente de Gente e Gestão da Ambev</p>
+                        </div>
+                    </div>
+                </article>
+            </div> <!-- Fim .testimonials-container -->
+        </div> <!-- Fim .testimonials-background -->
+    </section>
+
+    <!-- SEÇÃO FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Coluna 1: Logo e Mapa -->
+            <div class="footer-column footer-col--logo-map">
+                <a href="#" class="footer-logo">Mercap</a>
+                <div class="footer-map">
+                    <img src="images/placeholder-map.png" alt="Mapa mostrando localização aproximada">
+                </div>
+            </div>
+            <!-- Coluna 2: Contato e Redes Sociais -->
+            <div class="footer-column footer-col--contact">
+                <h4 class="footer-title">CONTATO</h4>
+                <div class="contact-details">
+                    <p><a href="tel:+55999999999">+55 99999-9999</a></p>
+                    <p><a href="mailto:contato@ejunicap.br">contato@ejunicap.br</a></p>
+                    <div class="footer-divider"></div> <!-- Linha divisória -->
+                    <p class="contact-address">
+                        Rua do Príncipe, 526 - Recife,<br>
+                        PE, 50050-425
+                    </p>
+                </div>
+                <ul class="social-links">
+                    <li class="social-item">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <img src="images/Facebook.svg" alt="Facebook">
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <img src="images/Instagram.svg" alt="Instagram">
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <img src="images/YouTube.svg" alt="YouTube">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Coluna 3: Informações/Navegação -->
+            <div class="footer-column footer-col--info">
+                <h4 class="footer-title">INFORMAÇÕES</h4>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Soluções</a></li>
+                        <li><a href="#">Mercap</a></li>
+                        <li><a href="#">Fale Conosco</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- <div class="footer-bottom-bar">
+            <p>© 2024 Mercap. Todos os direitos reservados.</p>
+        </div> -->
+    </footer>
+
+    <!-- SCRIPTS (Existente) -->
     <script src="app.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>
 </body>
 </html>

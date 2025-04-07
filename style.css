@@ -38,17 +38,35 @@
     box-sizing: border-box;
 }
 
-/* ELEMENTOS */
-.diferencial {
+/* ELEMENTOS GLOBAIS / UTILITÁRIOS */
+.diferencial { /* Estilo para a linha decorativa roxa */
   width: 12px;
   height: 4px;
   background: var(--c6);
-  margin-bottom: 1rem;
-  display: block;
+  margin-bottom: 1rem; /* Espaçamento padrão abaixo da linha */
+  display: block; /* Garante que ocupe espaço e permita margem */
 }
 
+/* === Estilos Base para Componentes Comuns === */
 
-/* HEADER */
+/* Cabeçalho de Seção (Container para span.diferencial + h2.section-title) */
+.section-header {
+  position: relative; /* Para posicionamento de elementos internos, se necessário */
+  margin-bottom: 3rem; /* Espaçamento padrão abaixo do cabeçalho completo */
+  /* Outros estilos comuns poderiam ir aqui (ex: display: flex, align-items: center) */
+}
+
+/* Título Padrão de Seção (h2) */
+.section-title {
+  font-family: var(--font-poppins);
+  font-size: 3rem;
+  font-weight: 700; /* Assumindo 700 como padrão */
+  color: var(--p2); /* Cor padrão para fundo claro */
+  position: relative; /* Necessário para alguns ::after ou posicionamentos específicos */
+  /* Removido margin-bottom daqui, será controlado pelo .section-header ou específico */
+}
+
+/* === HEADER === */
 .header {
     width: 100%;
     min-height: 7.5rem;
@@ -107,7 +125,7 @@
     transform-origin: left;
 }
 
-/* BANNER */
+/* === BANNER === */
 .banner {
   position: relative;
   width: 100%;
@@ -132,7 +150,7 @@
   max-width: 100px;
 }
 
-.banner-title {
+.banner-title { /* Título específico do banner (H1), não section-title */
   font-family: var(--font-poppins);
   font-weight: bolder;
   font-size: 3.3rem;
@@ -144,13 +162,13 @@
 .banner-title::after {
 content: '';
 position: absolute;
-left: 0; /* Alinhado à esquerda no desktop */
+left: 0;
 bottom: -.1rem;
 width: 270px;
 height: 2px;
 background: linear-gradient(to left, var(--c6), var(--c2));
 border-radius: 2px;
-transition: all 0.3s ease; /* Adicionei transição suave */
+transition: all 0.3s ease;
 }
 
 .banner-text {
@@ -166,7 +184,7 @@ transition: all 0.3s ease; /* Adicionei transição suave */
 .mercap-logo img {
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 0 5px rgba(98, 44, 134, 0.884)); /* Efeito opcional */
+  filter: drop-shadow(0 0 5px rgba(98, 44, 134, 0.884));
   animation: float 8s ease-in-out infinite;
 }
 
@@ -175,9 +193,7 @@ transition: all 0.3s ease; /* Adicionei transição suave */
   50% { transform: translateY(-2rem); }
 }
 
-/* Divisória */
-
-/* DIVISÓRIA COM CÍRCULO */
+/* === DIVISÓRIA === */
 .section-divider {
   padding: 2rem 0;
   display: flex;
@@ -210,19 +226,16 @@ transition: all 0.3s ease; /* Adicionei transição suave */
   margin-top: 4px;
 }
 
-/* SLIDER */
-
-/* SEÇÃO EMPRESAS PARCEIRAS - ATUALIZADO */
+/* === EMPRESAS PARCEIRAS === */
 .partners-section {
   margin: 80px 0;
 }
-.partners-title {
-  font-family: var(--font-poppins);
-  font-size: 3rem;
-  font-weight: 700;
+
+/* Estilo específico para o título da seção de parceiros */
+.partners-section .section-title {
   text-align: center;
-  color: var(--p2);
-  margin-bottom: 60px;
+  margin-bottom: 60px; /* Margem específica desta seção */
+  /* Herda fonte, tamanho, peso e cor do .section-title base */
 }
 
 .carrossel-container {
@@ -253,10 +266,10 @@ transition: all 0.3s ease; /* Adicionei transição suave */
 
 @keyframes carrossel {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* Novo cálculo */
+  100% { transform: translateX(-50%); }
 }
 
-/* SEÇÃO OBJETIVOS */
+/* === OBJETIVOS === */
 .objectives-section {
   padding: 4rem 0;
   background: var(--w);
@@ -264,19 +277,14 @@ transition: all 0.3s ease; /* Adicionei transição suave */
   margin: 0 auto;
 }
 
-.objectives-header {
-  margin-left: 140px;
-  margin-bottom: 3rem;
-  position: relative;
+/* Estilo específico para o cabeçalho da seção de objetivos */
+.objectives-section .section-header {
+  margin-left: 140px; /* Margem específica */
+  margin-bottom: 3rem; /* Mantém a margem padrão do .section-header */
 }
 
-.section-title {
-  font-family: var(--font-poppins);
-  font-size: 3rem;
-  color: var(--p2);
-  position: relative;
-  left: 0;
-}
+/* O .section-title aqui usa os estilos base */
+
 .objectives-grid {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
@@ -310,10 +318,10 @@ transition: all 0.3s ease; /* Adicionei transição suave */
   text-indent: 1rem;
 }
 
-/* SEÇÃO NOSSO DIFERENCIAL */
+/* === NOSSO DIFERENCIAL === */
 .diferencial-section {
   position: relative;
-  background: var(--p3);
+  background: var(--p3); /* Fundo escuro */
   padding: 8rem 140px 10rem;
   margin: 100px 0;
   overflow: visible;
@@ -325,17 +333,24 @@ transition: all 0.3s ease; /* Adicionei transição suave */
   max-width: 1440px;
   margin: 0 auto;
 }
+
 .diferencial-content {
   position: relative;
   width: 50%;
   z-index: 2;
 }
 
-.diferencial-content h2 {
-  font-family: var(--font-poppins);
-  font-size: 3rem;
-  color: var(--w);
-  margin-bottom: 2rem;
+/* Estilo específico para o cabeçalho da seção diferencial */
+.diferencial-section .section-header {
+   margin-bottom: 2rem; /* Sobrescreve a margem padrão */
+   /* Ajustes adicionais se necessários para layout com imagem */
+}
+
+/* Estilo específico para o título na seção diferencial */
+.diferencial-section .section-title {
+  color: var(--w); /* Cor branca por causa do fundo escuro */
+  /* Herda fonte, tamanho, peso do base */
+  /* margin-bottom é controlado pelo .section-header acima */
 }
 
 .diferencial-text {
@@ -347,7 +362,6 @@ transition: all 0.3s ease; /* Adicionei transição suave */
   max-width: 600px;
 }
 
-/* Imagem que vaza */
 .diferencial-image {
   position: absolute;
   width: 500px;
@@ -359,17 +373,20 @@ transition: all 0.3s ease; /* Adicionei transição suave */
 }
 
 .diferencial-image img {
-  width: 100%;  
+  width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 4px;
 }
 
-/* SEÇÃO NOSSOS PILARES */
+/* === NOSSOS PILARES === */
 .pillars-section {
   padding: 3rem 140px;
   background: var(--w);
 }
+
+/* O .section-header aqui usa a margem padrão de 3rem */
+/* O .section-title aqui usa os estilos base */
 
 .pillars-container {
   display: grid;
@@ -426,7 +443,7 @@ transition: all 0.3s ease; /* Adicionei transição suave */
   margin-bottom: 0.5rem;
 }
 
-.stat-title {
+.stat-title { /* Título dentro do card de stat, não o título da seção */
   font-family: var(--font-inter);
   font-size: 1.25rem;
   color: var(--p2);
@@ -440,367 +457,467 @@ transition: all 0.3s ease; /* Adicionei transição suave */
   line-height: 1.6;
 }
 
-/* SEÇÃO EXPERIÊNCIA ANTIGOS CLIENTES */
-.clientes {
+/* EXPERIÊNCIA ANTIGOS CLIENTES */
+.clients-section {
+  margin-top: -20px;
+}
+
+.section-header-wrapper {
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0 140px; 
 }
 
-.clientes__titulo {
-  font-family: var(--font-poppins);
-  font-size: 3rem;
-  margin-bottom: 1rem;
+/* Wrapper do fundo cinza - Ocupa toda a largura */
+.testimonials-background {
+  background-color: var(--p3);
+  width: 100%;
 }
 
-.clientes__container {
+/* Container do conteúdo dos depoimentos - Limita e alinha o conteúdo dentro do fundo cinza */
+.testimonials-container {
+  max-width: 1440px;
+  padding: 0 60px 140px;
   display: flex;
   flex-direction: column;
-  background: var(--p3);
 }
 
-/* Card individual */
-.cliente-card {
+.testimonial-card {
   display: flex;
-  gap: 40px;
-  padding: 0 40px;
-  border-radius: 8px;
+  align-items: center;
+  gap: 60px;
 }
 
-/* Modificador para layout invertido */
-.cliente-card--invertido {
+/* Modificador para inverter a ordem */
+.testimonial-card--reversed {
   flex-direction: row-reverse;
 }
 
-/* Foto do cliente */
-.cliente-card__foto {
-  flex: 0 0 423px;
+.testimonial-image {
+  flex-basis: 423px;
+  flex-shrink: 0;
   height: 420px;
-  background: #ddd url('caminho-da-imagem.jpg') center/cover;
+  line-height: 0;
 }
 
-/* Bloco de conteúdo */
-.cliente-card__conteudo {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.testimonial-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Texto do depoimento */
-.cliente-card__texto {
-  font: 400 26px/1.3 var(--font-merriweather);
-  color: var(--p6);
-  margin-bottom: 30px;
+.testimonial-content {
+  flex-grow: 1;
 }
 
-/* Informações do cliente */
-.cliente-card__info {
+/* Estilização da citação */
+.testimonial-content blockquote {
+  margin: 0 0 1.5rem 0;
 }
 
-.cliente-card__nome {
-  font: 500 16px/1.5 var(--font-poppins);
+/* Estilização do PARÁGRAFO dentro da citação */
+.testimonial-content blockquote p {
+  font-family: var(--font-merriweather);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5;
   color: var(--w);
-  margin-bottom: 4px;
 }
 
-.cliente-card__cargo {
-  font: 400 14px/1.5 var(--font-poppins);
+.testimonial-content blockquote p::before,
+.testimonial-content blockquote p::after {
   color: var(--p6);
+  font-size: 1.2em;
+  font-weight: bold;
+  display: inline-block;
 }
+
+.testimonial-content blockquote p::before {
+  content: '“';
+  margin-right: 0.2em;
+}
+
+.testimonial-content blockquote p::after {
+  content: '”';
+  margin-left: 0.2em;
+}
+
+/* Estilização do autor */
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.author-info {
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--w);
+}
+
+/* SEÇÃO FOOTER */
+
+.site-footer {
+  background: linear-gradient(180deg, var(--c6) 25%, var(--c4) 100%);
+  color: var(--w);
+  padding: 2rem 0;
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto; /* Centraliza o container */
+  padding: 0 80px; /* Padding lateral */
+  display: flex;
+  flex-wrap: wrap;
+  /* ALTERADO: De space-between para space-evenly */
+  justify-content: space-evenly; /* <<< MUDANÇA PRINCIPAL */
+  gap: 3rem 2rem; /* Manter o gap para espaçamento mínimo */
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* --- Coluna 1: Logo e Mapa --- */
+.footer-col--logo-map {
+  flex-basis: 30%;
+}
+
+.footer-logo {
+  display: inline-block;
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--w);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+}
+
+.footer-map {
+  max-width: 17rem;
+  height: auto;
+}
+
+.footer-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* --- Coluna 2: Contato --- */
+.footer-title {
+  font-family: var(--font-inter);
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--w);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.contact-details p,
+.contact-details .contact-address {
+  font-family: var(--font-roboto-mono);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.015em;
+  color: var(--w);
+  margin-bottom: 0.5rem;
+}
+
+.contact-details a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.contact-details a:hover {
+  opacity: 0.8;
+}
+
+.footer-divider {
+  width: 80%; /* Largura da linha (ajustar) */
+  max-width: 229px; /* Largura do Figma */
+  height: 2px;
+  background: #D9D9D9; /* Cinza claro do Figma */
+  border-radius: 4px;
+  margin: 1.5rem 0; /* Espaçamento acima e abaixo da linha */
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0 0; /* Espaço acima das redes sociais */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-item { }
+
+.social-link img {
+  display: block;
+  width: 32px; /* Tamanho do ícone (Figma) */
+  height: auto; /* Altura automática (ou 32px se forem quadrados) */
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover img {
+  transform: scale(1.05); /* Efeito hover */
+}
+
+/* --- Coluna 3: Informações --- */
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li {
+  margin-bottom: 0.5rem; /* Espaço entre links */
+}
+
+.footer-nav a {
+  font-family: var(--font-roboto-mono); /* Ou var(--font-roboto) */
+  font-weight: 500;
+  font-size: 16px; /* Figma */
+  line-height: 32px; /* Figma (200%) */
+  letter-spacing: 0.015em; /* Figma */
+  color: var(--w);
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+  opacity: 0.8;
+}
+
 
 /* ===== RESPONSIVIDADE ===== */
 /* Tablet (768px a 1024px) */
 @media (max-width: 1024px) {
-  .header {
-    padding: 0 2.5rem;
-    min-height: 6rem;
+  /* === Estilos Gerais Tablet === */
+  .header { padding: 0 2.5rem; min-height: 6rem; }
+  .logo { font-size: 2.5rem; }
+  .nav-links { gap: 1.5rem; }
+  .banner { height: 24rem; padding-top: 6rem; }
+  .banner-content { padding: 0 2.5rem; }
+  .banner-title { font-size: 2.5rem; }
+  .banner-text { font-size: 1.1rem; line-height: 1.8rem; }
+  .mercap-logo { width: 9rem; }
+
+  /* Padding geral das seções no tablet */
+  .objectives-section, .pillars-section, .diferencial-section {
+      padding-left: 5%;
+      padding-right: 5%;
   }
 
-  .logo {
-    font-size: 2.5rem;
+  /* Ajustes Seção Objetivos */
+  .objectives-section .section-header { margin-left: 0; }
+  .objectives-grid { padding: 0; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+
+  /* Ajustes Seção Pilares */
+  .pillars-section { padding-top: 6rem; padding-bottom: 6rem; }
+  .pillars-container { gap: 2rem; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-card { padding: 1.5rem; }
+
+  /* === Ajustes Diferencial Tablet === */
+  .diferencial-section {
+      /* Padding vertical ajustado (você já tinha) */
+      padding-top: 6rem;
+      padding-bottom: 6rem; /* Ajustado para talvez ser menos que 8rem */
+      /* Margens para consistência com outras seções */
+      margin-top: 60px;
+      margin-bottom: 60px;
+      overflow: hidden; /* IMPORTANTE: Para conter a imagem */
   }
 
-  .nav-links {
-    gap: 1.5rem;
+  .diferencial-container {
+      /* Remover display flex se for empilhar */
+      /* display: flex; */
   }
 
-  .banner {
-    height: 24rem;
-    padding-top: 6rem;
+  .diferencial-content {
+      width: 100%; /* Fazer conteúdo ocupar 100% para empilhar */
+      z-index: 1; /* Resetar z-index */
   }
 
-  .banner-content {
-    padding: 0 2.5rem;
+  .diferencial-section .section-header {
+      margin-bottom: 1.5rem; /* Ajustar margem abaixo do header */
   }
 
-  .banner-title {
-    font-size: 2.5rem;
+  .diferencial-image {
+      position: relative;   /* MUDAR para relativo */
+      width: 80%;           /* Definir largura */
+      max-width: 450px;     /* Limite */
+      height: auto;         /* Altura automática */
+      top: 0;               /* Resetar */
+      right: 0;             /* Resetar */
+      margin: 3rem auto 0;  /* Espaço acima, centraliza, sem margem inferior aqui */
+      filter: none;         /* Resetar filtro */
+      z-index: 1;           /* Resetar z-index */
+      float: none;          /* Garantir que não flutue */
   }
 
-  .banner-text {
-    font-size: 1.1rem;
-    line-height: 1.8rem;
+  .diferencial-image img {
+      border-radius: 4px;   /* Manter bordas arredondadas */
   }
+  /* === Fim Ajustes Diferencial Tablet === */
 
-  .mercap-logo {
-    width: 9rem;
-  }
 
-  .objectives-section {
-    padding: 4rem 5%;
+  /* === Ajustes Clientes Tablet === */
+  .testimonials-background { /* Padding vertical do fundo */
+      padding: 40px 0;
   }
-  .objectives-header,
-  .objectives-grid {
-    padding-left: 5%;
-    margin-left: 0;
+  .section-header-wrapper,
+  .testimonials-container { /* Padding lateral do conteúdo */
+      padding-left: 5%;
+      padding-right: 5%;
   }
-
-  .objectives-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-    gap: 1.5rem;
-    padding: 0 80px;
+  .testimonials-container { /* Ajuste gap */
+      gap: 40px;
   }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .pillars-section {
-    padding: 6rem 80px;
-  }
-
-  .pillars-container {
-    gap: 2rem;
-  }
-  
-  .stat-card {
-    padding: 1.5rem;
-  }
-
+  .testimonial-card { gap: 40px; }
+  .testimonial-image { flex-basis: 300px; height: auto; aspect-ratio: 423 / 420; }
+  .testimonial-content blockquote p { font-size: 20px; line-height: 1.5; }
+  .author-info { font-size: 15px; }
 }
 
-  
+
 /* Celular (até 768px) */
 @media (max-width: 768px) {
-  .header {
-    padding: 0 1.5rem;
-    min-height: 5rem;
-  }
+  /* === Estilos Gerais Celular === */
+  .header { padding: 0 1.5rem; min-height: 5rem; }
+  .logo { font-size: 2rem; }
+  .menu-toggle { display: block; }
+  .nav-links { display: none; }
+  .banner { height: auto; min-height: 82vh; padding: 5rem 0; }
+  .banner-content { flex-direction: column; padding: 0 3rem; gap: 2rem; text-align: center; }
+  .banner-title { font-size: 2rem; margin-bottom: 1.5rem; }
+  .banner-title::after { left: 50%; transform: translateX(-50%); width: 12rem; }
+  .banner-text { font-size: 1rem; line-height: 1.6rem; margin-top: 0; max-width: 100%; }
+  .mercap-logo { display: none; }
+  .section-divider { display: none; }
+  .partners-section, .objectives-section, .pillars-section, .diferencial-section { margin-top: 60px; margin-bottom: 60px; padding-left: 1.5rem; padding-right: 1.5rem; }
+  .section-title { font-size: 2rem; }
+  .section-header { margin-bottom: 2rem; }
+  .partners-section { padding-top: 60px; padding-bottom: 60px; }
+  .partners-section .section-title { margin-bottom: 40px; }
+  .carrossel-item { width: 150px; height: 150px; }
+  .carrossel-track { animation-duration: 30s; gap: 20px; }
+  .objectives-section { padding-top: 3rem; padding-bottom: 3rem; }
+  .objectives-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 0; }
+  .diferencial-section { padding: 4rem 1.5rem 6rem; margin-top: 60px; }
+  .diferencial-content { width: 100%; }
+  .diferencial-section .section-header { margin-bottom: 1.5rem; }
+  .diferencial-image { position: relative; width: 100%; height: auto; max-height: 400px; object-fit: cover; right: 0; top: 0; margin-top: 3rem; filter: none; border-radius: 4px; }
+  .diferencial-image img { height: auto; }
+  .pillars-section { padding: 4rem 1.5rem; }
+  .pillars-container { grid-template-columns: 1fr; display: flex; flex-direction: column; gap: 2rem;}
+  .pillars-container img { max-width: 80%; margin: 0 auto; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .stat-number { font-size: 2rem; }
 
-  .logo {
-    font-size: 2rem;
+  /* === Ajustes Clientes Celular === */
+  .testimonials-background { /* Adicionado padding vertical ao background */
+      padding: 30px 0;
   }
-
-  /* Menu hamburguer seria adicionado aqui */
-  .menu-toggle {
-    display: block;
+  .clients-section {
+      margin-top: 60px;
+      margin-bottom: 60px;
   }
-  .nav-links {
-    display: none; /* Temporário - substituir por menu mobile */
+  .section-header-wrapper,
+  .testimonials-container { /* Mantido SÓ padding lateral no container */
+      padding: 0 1.5rem;
   }
-  
-  .banner {
-    height: auto;
-    min-height: 82vh;
-    padding: 5rem 0;
+  .clients-section .section-header { } /* Herdará */
+  .testimonials-container { /* Ajuste gap */
+      gap: 30px;
   }
-
-  .banner-content {
+  .testimonial-card,
+  .testimonial-card--reversed {
     flex-direction: column;
-    padding: 0 3rem;
-    gap: 2rem;
+    gap: 20px;
     text-align: center;
   }
-  
-  .banner-title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+  .testimonial-image {
+    flex-basis: auto;
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    border-radius: 50%;
   }
-
-  .banner-title::after {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 12rem;
+  .testimonial-content {
+    padding: 0;
+    align-items: center;
   }
-  
-  .banner-text {
-    font-size: 1rem;
-    line-height: 1.6rem;
-    margin-top: 0;
-    max-width: 100%;
+  .testimonial-content blockquote {
+    margin-bottom: 1.25rem;
   }
-  
-  /* Faz o logo desaparecer em mobile */
-  .mercap-logo {
-    display: none;
+  .testimonial-content blockquote p {
+    font-size: 17px;
+    line-height: 1.6;
   }
-
-  /* Divisória - Tablet */
-  .section-divider {
-    display: none;
+  .testimonial-author {
+    justify-content: center;
   }
-
-  /* Empresas parceiras*/
-  .partners-section {
-    padding: 60px 0;
-  }
-  
-  .partners-title {
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
-  
-  .partner-logo {
-    width: 150px;
-    height: 150px;
-    margin: 0 20px;
-  }
-  
-  .partners-slider-track {
-    animation-duration: 30s;
-  }
-  
-  .objectives-section {
-    padding: 3rem 1.5rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .decorative-line {
-    width: 10px;
-    height: 3px;
-  }
-
-  .objectives-grid {
-    grid-template-columns: repeat(1, 1fr); /* 1 coluna */
-    gap: 1.5rem;
-    padding: 0 80px;
-  }
-
-  .diferencial-section {
-    padding: 4rem 40px 8rem;
-  }
-  
-  .diferencial-content {
-    width: 100%;
-  }
-  
-  .diferencial-image {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    right: 0;
-    top: 0;
-    margin-top: 3rem;
-    filter: none;
-  }
-
-  .pillars-section {
-    padding: 4rem 40px;
-  }
-
-  .pillars-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  
-  .stat-number {
-    font-size: 2rem;
-  }
-
-  .testimonials {
-    padding: 60px 20px;
-}
-
-  .section-title {
-      font-size: 36px; /* Tamanho menor para mobile */
+  .author-info {
+    font-size: 14px;
   }
 }
 
 /* Celulares pequenos (até 480px) */
 @media (max-width: 480px) {
-  .banner-title {
-    font-size: 1.8rem;
-  }
-  .banner-title::after {
-    width: 10rem;
-  }
-  .section-divider {
-    display: none;
-  }
+  /* === Estilos Gerais Celulares Pequenos === */
+  .header { padding: 0 1rem; }
+  .banner-content { padding: 0 1.5rem; }
+  .banner-title { font-size: 1.8rem; }
+  .banner-title::after { width: 10rem; }
+  .partners-section, .objectives-section, .pillars-section, .diferencial-section { padding-left: 1rem; padding-right: 1rem; }
+  .section-title { font-size: 1.75rem; line-height: 1.3; }
+  .section-header { margin-bottom: 1.5rem; }
+  .partners-section .section-title { margin-bottom: 30px; }
+  .carrossel-item { width: 120px; height: 120px; }
+  .carrossel-track { gap: 15px; }
+  .objectives-section { padding-top: 2rem; padding-bottom: 2rem; }
+  .objectives-grid { gap: 1rem; }
+  .objective-card { padding: 1.25rem; }
+  .objective-card > .card-title { font-size: 1.3rem; }
+  .objective-card > .card-text { font-size: 0.9rem; }
+  .diferencial-section { padding: 3rem 1rem 4rem; }
+  .pillars-section { padding: 3rem 1rem; }
+  .stats-grid { grid-template-columns: 1fr; max-width: 90%; margin: 2rem auto; gap: 1rem;}
+  .stat-card { padding: 1.5rem; }
+  .stat-icon { font-size: 2rem; }
+  .stat-title { font-size: 1.1rem; }
+  .stat-number { font-size: 1.8rem; }
 
-  .partner-logo {
-    width: 120px;
-    height: 120px;
-    padding: 20px;
+  /* === Ajustes Clientes Celulares Pequenos === */
+  .testimonials-background { /* Adicionado padding vertical ao background */
+    padding: 20px 0;
   }
-
-  .objectives-section {
-    width: 100%;
+  .section-header-wrapper,
+  .testimonials-container { /* Mantido SÓ padding lateral no container */
+    padding: 0 1rem;
   }
-
-  .objectives-section {
-    padding: 2rem 20px; /* Reduz padding vertical e horizontal */
-  }
-
-  .objectives-header {
-    margin-left: 20px; /* Alinhamento com o conteúdo */
-  }
-
-  .diferencial {
-    margin-left: 0;
-  }
-
-  .section-title {
-    font-size: 1.75rem;
-    line-height: 1.3;
-  }
-
-  .objectives-grid {
-    gap: 1rem;
-    padding: 0 10px;
-  }
-
-  .objective-card {
-    padding: 1.25rem;
-    min-width: unset;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  .stats-grid {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-    margin: 2rem auto;
-  }
-  
-  .stat-card {
-    padding: 1.5rem;
-  }
-
-  .pillars-section {
-    padding: 3rem 20px;
-  }
-  
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .stat-icon {
-    font-size: 2rem;
-  }
-  
-  .stat-title {
-    font-size: 1.1rem;
-  }
-
+  .testimonials-container { } /* Herdará gap */
+  .testimonial-image { width: 70%; max-width: 250px; }
+  .testimonial-content blockquote p { font-size: 15px; line-height: 1.6; }
+  .author-info { font-size: 13px; }
 }
