@@ -31,9 +31,10 @@ Esse é o site oficial do evento anual MERCAP, uma iniciativa que conecta jovens
 * [ ] Finalizar responsividade
 * [ ] Otimizar imagens e melhorar performance
 * [ ] Consertar animação do título do banner
-* [ ] Consertar erro de zoom out na responsividade em celulares
-* [x] Adição da seção de experiência de antigos clientes
-* [x] Adição do Footer
+* [x] Consertar erro de zoom out na responsividade em celulares
+* [x] Finalização da seção de experiência de antigos clientes
+* [x] Finalização do Footer
+* [x] Implementar Menu Hamburguer
 
 ## Licença
 
