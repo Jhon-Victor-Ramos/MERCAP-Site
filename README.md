@@ -17,10 +17,7 @@ Esse é o site oficial do evento anual MERCAP, uma iniciativa que conecta jovens
 ## Funcionalidades
 
 *   **Informações do Evento:** Detalhes completos sobre data, local e programação do MERCAP.
-*   **Inscrições Online:** Processo de inscrição facilitado para participantes e empresas.
 *   **Perfil dos Palestrantes e Empresas:** Conheça os palestrantes e as empresas participantes.
-*   **Área de Notícias:** Novidades, artigos e entrevistas sobre o mercado de trabalho e empreendedorismo.
-*   **Contato e Suporte:** Canais de contato para dúvidas e suporte.
 *   **Mapa Interativo:** Localização e navegação pelo evento (se aplicável).
 
 ## Tecnologias Utilizadas
@@ -35,7 +32,8 @@ Esse é o site oficial do evento anual MERCAP, uma iniciativa que conecta jovens
 * [ ] Otimizar imagens e melhorar performance
 * [ ] Consertar animação do título do banner
 * [ ] Consertar erro de zoom out na responsividade em celulares
-* Mais passos pela frente
+* [x] Adição da seção de experiência de antigos clientes
+* [x] Adição do Footer
 
 ## Licença
 
