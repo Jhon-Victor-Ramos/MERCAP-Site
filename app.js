@@ -1,3 +1,40 @@
+// MENU HAMBURGUER
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.header');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links'); // Opcional, se precisar interagir com ele
+
+    if (menuToggle && header) { // Verifica se os elementos existem
+        menuToggle.addEventListener('click', () => {
+            header.classList.toggle('menu-active');
+
+            // Opcional: Acessibilidade - Informar se o menu está expandido
+            const isExpanded = header.classList.contains('menu-active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+    }
+
+    // Opcional: Fechar o menu ao clicar em um link (bom para SPAs ou links internos #)
+    if (navLinks) {
+        navLinks.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (header.classList.contains('menu-active')) {
+                    header.classList.remove('menu-active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    }
+
+     // Opcional: Adicionar atributo aria-expanded inicial
+    if (menuToggle) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        navLinks.id = 'main-nav-links'; // Exemplo de ID
+        menuToggle.setAttribute('aria-controls', 'main-nav-links');
+    }
+
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.carrossel-container');
     const track = document.querySelector('.carrossel-track');
@@ -104,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (percentage < 1) {
                 requestAnimationFrame(animation);
             } else {
-                element.textContent = endValue; // Garante o valor final exato
+                element.textContent = endValue;
             }
         };
         requestAnimationFrame(animation);

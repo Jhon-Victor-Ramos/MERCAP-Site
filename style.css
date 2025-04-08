@@ -39,21 +39,20 @@
 }
 
 /* ELEMENTOS GLOBAIS / UTILITÁRIOS */
-.diferencial { /* Estilo para a linha decorativa roxa */
+.diferencial {
   width: 12px;
   height: 4px;
   background: var(--c6);
-  margin-bottom: 1rem; /* Espaçamento padrão abaixo da linha */
-  display: block; /* Garante que ocupe espaço e permita margem */
+  margin-bottom: 1rem;
+  display: block;
 }
 
 /* === Estilos Base para Componentes Comuns === */
 
 /* Cabeçalho de Seção (Container para span.diferencial + h2.section-title) */
 .section-header {
-  position: relative; /* Para posicionamento de elementos internos, se necessário */
-  margin-bottom: 3rem; /* Espaçamento padrão abaixo do cabeçalho completo */
-  /* Outros estilos comuns poderiam ir aqui (ex: display: flex, align-items: center) */
+  position: relative;
+  margin-bottom: 3rem;
 }
 
 /* Título Padrão de Seção (h2) */
@@ -68,62 +67,110 @@
 
 /* === HEADER === */
 .header {
-    width: 100%;
-    min-height: 7.5rem;
-    background: var(--gradient1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 80px;
-    z-index: 1000;
+  width: 100%;
+  min-height: 7.5rem;
+  background: var(--gradient1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  z-index: 1000;
+  /* position: relative; */ /* Não precisa aqui, apenas no mobile */
 }
 
-.menu-toggle {
-  display: none;
-}
+/* REMOVA UMA DESTAS DUAS REGRAS ABAIXO */
+/* .menu-toggle {
+display: none;
+} */
 
 .logo {
-    font-family: var(--font-poppins);
-    font-weight: bold;
-    font-size: 48px;
-    color: var(--w);
-    text-decoration: none;
+  font-family: var(--font-poppins);
+  font-weight: bold;
+  font-size: 48px;
+  color: var(--w);
+  text-decoration: none;
 }
 
 .nav-links {
-    display: flex;
-    gap: 40px;
+  display: flex; /* Display padrão para desktop */
+  gap: 40px;
+  /* Remover position, etc daqui, pois isso é para o mobile dropdown */
 }
 
 .nav-link {
-    font-family: var(--font-poppins);
-    font-weight: 500;
-    font-size: 1.2rem;
-    color: var(--w);
-    text-decoration: none;
-    position: relative;
-    padding-bottom: 8px;
-    transition: color 0.3s;
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--w);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 8px;
+  transition: color 0.3s;
 }
 
 .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: -6%;
-    width: 92%;
-    height: 2px;
-    background: var(--w);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease-in-out;
-    border-radius: 2px;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -6%;
+  width: 92%;
+  height: 2px;
+  background: var(--w);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 2px;
 }
 
 .nav-link:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+transform: scaleX(1);
+transform-origin: left;
 }
+
+/* MENU HAMBURGUER (ESTILOS BASE) */
+.menu-toggle {
+display: none; /* <<< Mantenha este display: none; aqui para desktop */
+background: none;
+border: none;
+cursor: pointer;
+padding: 10px; /* Área de clique */
+z-index: 1001;
+}
+
+.hamburger {
+display: block;
+position: relative;
+width: 30px;
+height: 3px;
+background-color: var(--w);
+border-radius: 3px;
+transition: background-color 0.3s 0s ease-in-out; /* Adicionado delay 0s */
+}
+
+.hamburger::before,
+.hamburger::after {
+content: '';
+position: absolute;
+left: 0;
+width: 100%;
+height: 3px;
+background-color: var(--w);
+border-radius: 3px;
+/* Ajustar transição para ser mais específica */
+transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.hamburger::before {
+top: -10px;
+}
+
+/* Ajuste na transição do ::after para consistência */
+.hamburger::after {
+/* bottom: -10px; */ /* Usar top é mais fácil para animar pro centro */
+top: 10px;
+transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
 
 /* === BANNER === */
 .banner {
@@ -385,8 +432,10 @@ transition: all 0.3s ease;
   background: var(--w);
 }
 
-/* O .section-header aqui usa a margem padrão de 3rem */
-/* O .section-title aqui usa os estilos base */
+.pillars-section-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
 
 .pillars-container {
   display: grid;
@@ -472,12 +521,14 @@ transition: all 0.3s ease;
 .testimonials-background {
   background-color: var(--p3);
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* Container do conteúdo dos depoimentos - Limita e alinha o conteúdo dentro do fundo cinza */
 .testimonials-container {
   max-width: 1440px;
-  padding: 0 60px 140px;
+  padding: 0 140px;
   display: flex;
   flex-direction: column;
 }
@@ -586,7 +637,7 @@ transition: all 0.3s ease;
 
 .footer-column {
   flex: 1;
-  min-width: 250px;
+  max-width: 250px;
 }
 
 /* --- Coluna 1: Logo e Mapa --- */
@@ -666,8 +717,6 @@ transition: all 0.3s ease;
   gap: 20px;
 }
 
-.social-item { }
-
 .social-link img {
   display: block;
   width: 32px; /* Tamanho do ícone (Figma) */
@@ -746,11 +795,6 @@ transition: all 0.3s ease;
       overflow: hidden; /* IMPORTANTE: Para conter a imagem */
   }
 
-  .diferencial-container {
-      /* Remover display flex se for empilhar */
-      /* display: flex; */
-  }
-
   .diferencial-content {
       width: 100%; /* Fazer conteúdo ocupar 100% para empilhar */
       z-index: 1; /* Resetar z-index */
@@ -761,20 +805,20 @@ transition: all 0.3s ease;
   }
 
   .diferencial-image {
-      position: relative;   /* MUDAR para relativo */
-      width: 80%;           /* Definir largura */
-      max-width: 450px;     /* Limite */
-      height: auto;         /* Altura automática */
-      top: 0;               /* Resetar */
-      right: 0;             /* Resetar */
-      margin: 3rem auto 0;  /* Espaço acima, centraliza, sem margem inferior aqui */
-      filter: none;         /* Resetar filtro */
-      z-index: 1;           /* Resetar z-index */
-      float: none;          /* Garantir que não flutue */
+      position: relative;
+      width: 80%;
+      max-width: 450px;
+      height: auto;
+      top: 0;
+      right: 0;
+      margin: 3rem auto 0;
+      filter: none;
+      z-index: 1;
+      float: none;
   }
 
   .diferencial-image img {
-      border-radius: 4px;   /* Manter bordas arredondadas */
+      border-radius: 4px;
   }
   /* === Fim Ajustes Diferencial Tablet === */
 
@@ -800,11 +844,17 @@ transition: all 0.3s ease;
 
 /* Celular (até 768px) */
 @media (max-width: 768px) {
-  /* === Estilos Gerais Celular === */
-  .header { padding: 0 1.5rem; min-height: 5rem; }
+  /* === Estilos Gerais Celular (Manter os seus) === */
+  .header {
+    padding: 0 1.5rem;
+    min-height: 5rem;
+  }
   .logo { font-size: 2rem; }
-  .menu-toggle { display: block; }
-  .nav-links { display: none; }
+  .menu-toggle {
+    display: block;
+    z-index: 1001;
+  }
+
   .banner { height: auto; min-height: 82vh; padding: 5rem 0; }
   .banner-content { flex-direction: column; padding: 0 3rem; gap: 2rem; text-align: center; }
   .banner-title { font-size: 2rem; margin-bottom: 1.5rem; }
@@ -812,9 +862,13 @@ transition: all 0.3s ease;
   .banner-text { font-size: 1rem; line-height: 1.6rem; margin-top: 0; max-width: 100%; }
   .mercap-logo { display: none; }
   .section-divider { display: none; }
+
+  /* Padding geral das seções mobile (Manter o seu) */
   .partners-section, .objectives-section, .pillars-section, .diferencial-section { margin-top: 60px; margin-bottom: 60px; padding-left: 1.5rem; padding-right: 1.5rem; }
   .section-title { font-size: 2rem; }
   .section-header { margin-bottom: 2rem; }
+
+  /* Estilos específicos de outras seções mobile (Manter os seus) */
   .partners-section { padding-top: 60px; padding-bottom: 60px; }
   .partners-section .section-title { margin-bottom: 40px; }
   .carrossel-item { width: 150px; height: 150px; }
@@ -826,26 +880,26 @@ transition: all 0.3s ease;
   .diferencial-section .section-header { margin-bottom: 1.5rem; }
   .diferencial-image { position: relative; width: 100%; height: auto; max-height: 400px; object-fit: cover; right: 0; top: 0; margin-top: 3rem; filter: none; border-radius: 4px; }
   .diferencial-image img { height: auto; }
-  .pillars-section { padding: 4rem 1.5rem; }
+  .pillars-section { padding: 4rem 0; /* Ajustado padding vertical */ } /* Remover padding lateral da seção */
+  .pillars-section-wrapper { padding: 0 1.5rem; /* Adicionar padding lateral ao wrapper */ }
   .pillars-container { grid-template-columns: 1fr; display: flex; flex-direction: column; gap: 2rem;}
   .pillars-container img { max-width: 80%; margin: 0 auto; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .stat-number { font-size: 2rem; }
 
-  /* === Ajustes Clientes Celular === */
-  .testimonials-background { /* Adicionado padding vertical ao background */
+  /* === AJUSTES CLIENTES MOBILE (Mantendo seus últimos ajustes) === */
+   .testimonials-background {
       padding: 30px 0;
   }
   .clients-section {
       margin-top: 60px;
-      margin-bottom: 60px;
+      /* margin-bottom: 60px; <= Removido conforme solicitado */
   }
   .section-header-wrapper,
-  .testimonials-container { /* Mantido SÓ padding lateral no container */
+  .testimonials-container {
       padding: 0 1.5rem;
   }
-  .clients-section .section-header { } /* Herdará */
-  .testimonials-container { /* Ajuste gap */
+  .testimonials-container {
       gap: 30px;
   }
   .testimonial-card,
@@ -855,32 +909,128 @@ transition: all 0.3s ease;
     text-align: center;
   }
   .testimonial-image {
-    flex-basis: auto;
-    width: 80%;
-    max-width: 300px;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    margin: 0 auto;
-    border-radius: 50%;
+    flex-basis: auto; width: 80%; max-width: 200px; height: auto;
+    aspect-ratio: 1 / 1; margin: 0 auto; border-radius: 50%;
+    order: 1; overflow: hidden;
   }
-  .testimonial-content {
-    padding: 0;
-    align-items: center;
-  }
-  .testimonial-content blockquote {
-    margin-bottom: 1.25rem;
-  }
-  .testimonial-content blockquote p {
-    font-size: 17px;
-    line-height: 1.6;
-  }
-  .testimonial-author {
+  .testimonial-image img { width: 100%; height: 100%; object-fit: cover; }
+  .testimonial-content { padding: 0; align-items: center; display: flex; flex-direction: column; order: 2; }
+  .testimonial-content blockquote { margin-bottom: 1.25rem; order: 2; }
+  .testimonial-author { justify-content: center; margin-bottom: 1rem; order: 1; }
+  .testimonial-content blockquote p { font-size: 16px; line-height: 1.6; } /* Usando a fonte menor final */
+  .author-info { font-size: 14px; }
+
+  /* === MENU HAMBURGUER / OVERLAY (REGRAS CORRIGIDAS E CONSOLIDADAS) === */
+
+  /* Configuração do OVERLAY de Navegação (Estado INICIAL escondido) */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Espaço entre os links */
+
+    position: fixed;     /* Fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;       /* Altura total */
+    background: var(--c4); /* Fundo do overlay */
+    padding: 2rem 1rem;
+    z-index: 1000;       /* Acima do fundo escuro, abaixo do botão */
+    overflow-y: auto;
+
+    /* Estado inicial escondido com animação scale */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s linear;
   }
-  .author-info {
-    font-size: 14px;
+
+  /* Estilos dos links individuais DENTRO do overlay */
+  .nav-links {
+    /* ... (display, flex-direction, justify-content, align-items, gap, etc. - Mantidos) ... */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--c4);
+    padding: 2rem 1rem;
+    z-index: 1000;
+    overflow-y: auto;
+
+    /* Estado inicial escondido com animação SLIDE-DOWN */
+    opacity: 0;
+    visibility: hidden;
+    /* ALTERADO: Mover para cima em vez de escalar */
+    transform: translateY(-100%);
+    pointer-events: none;
+    /* Garantir que a transição inclua transform */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s linear;
   }
-}
+  .nav-link::after {
+      display: none;
+  }
+
+   /* Estado Hover/Focus para links no overlay */
+  .nav-link:hover,
+  .nav-link:focus {
+      background-color: rgba(0, 0, 0, 0.3);
+      transform: scale(1.05);
+      outline: none;
+  }
+  .header.menu-active .nav-links {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* Animação do Hambúrguer para "X" */
+  .header.menu-active .hamburger {
+    background-color: transparent;
+     transition: background-color 0.1s 0.2s ease-in-out;
+  }
+  .header.menu-active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  .header.menu-active .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  /* === FIM MENU HAMBURGUER === */
+
+
+  /* === AJUSTES FOOTER MOBILE (Manter os seus) === */
+   .site-footer {
+        padding: 3rem 0;
+    }
+    .footer-container {
+        flex-direction: column;
+        padding: 0 1.5rem;
+        gap: 2.5rem;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-column {
+        flex-basis: auto;
+        width: 100%;
+        max-width: 400px;
+        min-width: unset;
+    }
+    .footer-logo { margin-bottom: 1.5rem; }
+    .footer-map { margin: 0 auto; }
+    .footer-title { margin-bottom: 1rem; }
+    .footer-divider { margin: 1rem auto; }
+    .social-links { justify-content: center; }
+    .footer-nav ul { text-align: center; }
+   /* === FIM AJUSTES FOOTER MOBILE === */
+
+} /* Fim de @media (max-width: 768px) */
 
 /* Celulares pequenos (até 480px) */
 @media (max-width: 480px) {
@@ -916,7 +1066,6 @@ transition: all 0.3s ease;
   .testimonials-container { /* Mantido SÓ padding lateral no container */
     padding: 0 1rem;
   }
-  .testimonials-container { } /* Herdará gap */
   .testimonial-image { width: 70%; max-width: 250px; }
   .testimonial-content blockquote p { font-size: 15px; line-height: 1.6; }
   .author-info { font-size: 13px; }
