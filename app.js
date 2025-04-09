@@ -1,40 +1,42 @@
 // MENU HAMBURGUER
+
 document.addEventListener('DOMContentLoaded', () => {
+    const htmlElement = document.documentElement; // <<< SELECIONAR HTML
+    const body = document.body;
     const header = document.querySelector('.header');
     const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links'); // Opcional, se precisar interagir com ele
+    const navLinks = document.querySelector('.nav-links');
 
-    if (menuToggle && header) { // Verifica se os elementos existem
+    if (menuToggle && header && body && htmlElement) { // Adicionado htmlElement
         menuToggle.addEventListener('click', () => {
             header.classList.toggle('menu-active');
+            body.classList.toggle('overlay-active');
+            htmlElement.classList.toggle('overlay-active'); // <<< ADICIONADO Toggle no HTML
 
-            // Opcional: Acessibilidade - Informar se o menu está expandido
             const isExpanded = header.classList.contains('menu-active');
             menuToggle.setAttribute('aria-expanded', isExpanded);
         });
     }
 
-    // Opcional: Fechar o menu ao clicar em um link (bom para SPAs ou links internos #)
-    if (navLinks) {
-        navLinks.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                if (header.classList.contains('menu-active')) {
-                    header.classList.remove('menu-active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
+    // Fechar o menu ao clicar em um link
+    if (navLinks && body && htmlElement) { // Adicionado htmlElement
+      navLinks.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          if (header.classList.contains('menu-active')) {
+            header.classList.remove('menu-active');
+            body.classList.remove('overlay-active');
+            htmlElement.classList.remove('overlay-active'); // <<< ADICIONADO Remover do HTML
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
         });
+      });
     }
 
-     // Opcional: Adicionar atributo aria-expanded inicial
-    if (menuToggle) {
-        menuToggle.setAttribute('aria-expanded', 'false');
-        navLinks.id = 'main-nav-links'; // Exemplo de ID
-        menuToggle.setAttribute('aria-controls', 'main-nav-links');
-    }
-
+     // Atributo aria-expanded inicial
+     // ... (resto do JS) ...
 });
 
+// ANIMAÇÃO CARROSSEL 
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.carrossel-container');
     const track = document.querySelector('.carrossel-track');
@@ -86,22 +88,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ANIMAÇÃO BANNER
+// ANIMAÇÃO BANNER (LETRAS SUBINDO E DESLIZANDO)
 document.addEventListener('DOMContentLoaded', () => {
     const titleElement = document.getElementById('animated-title');
     const titleText = "MERCAP";
-    const animationDelay = 500; // Milissegundos entre cada letra
+    const delayIncrement = 0.1;
+    const animationDuration = 0.6; // Manter sincronizado com CSS
 
-    let charIndex = 0;
+    if (titleElement) {
+        titleElement.textContent = '';
 
-    function typeCharacter() {
-        if (charIndex < titleText.length) {
-            titleElement.textContent += titleText.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeCharacter, animationDelay);
-        }
+        titleText.split('').forEach((char, index) => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.style.animationDelay = `${index * delayIncrement}s`;
+
+            // <<< ADICIONADO: Adicionar classe se NÃO for o último caractere >>>
+            if (index < titleText.length - 1) {
+                span.classList.add('not-last-char');
+            }
+
+            titleElement.appendChild(span);
+        });
     }
-    typeCharacter(); // Inicia a animação quando a página carrega
 });
 
 // ANIMAÇÃO NOSSOS PILARES

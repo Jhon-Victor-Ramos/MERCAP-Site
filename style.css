@@ -47,6 +47,14 @@
   display: block;
 }
 
+html.overlay-active {
+  overflow: hidden;
+}
+
+body.overlay-active {
+  overflow: hidden;
+}
+
 /* === Estilos Base para Componentes Comuns === */
 
 /* Cabeçalho de Seção (Container para span.diferencial + h2.section-title) */
@@ -197,25 +205,62 @@ transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
   max-width: 100px;
 }
 
-.banner-title { /* Título específico do banner (H1), não section-title */
+.banner-title {
   font-family: var(--font-poppins);
   font-weight: bolder;
   font-size: 3.3rem;
   color: var(--w);
   margin-bottom: 2rem;
-  position: relative;
+  position: relative; /* Mantido */
+
+  /* --- NOVAS REGRAS PARA MASCARAMENTO --- */
+  line-height: 1.1;    /* Ajustar para ficar justo com a altura da fonte */
+  overflow: hidden;   /* ESSENCIAL: Esconde o que estiver fora */
+  display: block;     /* Garantir que H1 seja bloco para overflow funcionar bem */
+  padding-bottom: 5px; /* Pequeno espaço extra abaixo das letras antes da linha */
+                      /* Ajuste este padding se necessário */
 }
 
 .banner-title::after {
-content: '';
-position: absolute;
-left: 0;
-bottom: -.1rem;
-width: 270px;
-height: 2px;
-background: linear-gradient(to left, var(--c6), var(--c2));
-border-radius: 2px;
-transition: all 0.3s ease;
+  content: '';
+  position: absolute;
+  left: 0;
+  /* Ajustar 'bottom' para ficar um pouco abaixo do limite do overflow */
+  bottom: 0; /* Posiciona a linha na base do padding */
+  width: 270px;
+  height: 2px;
+  background: linear-gradient(to left, var(--c6), var(--c2));
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.banner-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translate(0, 100%);
+  animation-name: riseThenSlide;
+  animation-duration: 0.8s; 
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+/* Transformação inicial para as letras que NÃO são a última */
+.banner-title span.not-last-char {
+  transform: translate(30px, 100%);
+}
+
+@keyframes riseThenSlide {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
 
 .banner-text {
@@ -239,6 +284,7 @@ transition: all 0.3s ease;
   0%, 100% { transform: translateY(-1rem); }
   50% { transform: translateY(-2rem); }
 }
+
 
 /* === DIVISÓRIA === */
 .section-divider {
@@ -992,7 +1038,7 @@ transition: all 0.3s ease;
   /* Animação do Hambúrguer para "X" */
   .header.menu-active .hamburger {
     background-color: transparent;
-     transition: background-color 0.1s 0.2s ease-in-out;
+    transition: background-color 0.1s 0.2s ease-in-out;
   }
   .header.menu-active .hamburger::before {
     transform: rotate(45deg);
