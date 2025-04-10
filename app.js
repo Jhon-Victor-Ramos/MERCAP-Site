@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const containerWidth = container.offsetWidth;
         let trackWidth = track.scrollWidth;
         
-        while (trackWidth < containerWidth * 2) {
+        while (trackWidth < containerWidth * 4) {
             items.forEach(item => {
                 const clone = item.cloneNode(true);
                 track.appendChild(clone);

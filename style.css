@@ -211,22 +211,18 @@ transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
   font-size: 3.3rem;
   color: var(--w);
   margin-bottom: 2rem;
-  position: relative; /* Mantido */
-
-  /* --- NOVAS REGRAS PARA MASCARAMENTO --- */
-  line-height: 1.1;    /* Ajustar para ficar justo com a altura da fonte */
-  overflow: hidden;   /* ESSENCIAL: Esconde o que estiver fora */
-  display: block;     /* Garantir que H1 seja bloco para overflow funcionar bem */
-  padding-bottom: 5px; /* Pequeno espaço extra abaixo das letras antes da linha */
-                      /* Ajuste este padding se necessário */
+  position: relative;
+  line-height: 1.1;
+  overflow: hidden;
+  display: block;
+  padding-bottom: 5px;
 }
 
 .banner-title::after {
   content: '';
   position: absolute;
   left: 0;
-  /* Ajustar 'bottom' para ficar um pouco abaixo do limite do overflow */
-  bottom: 0; /* Posiciona a linha na base do padding */
+  bottom: 0;
   width: 270px;
   height: 2px;
   background: linear-gradient(to left, var(--c6), var(--c2));
@@ -244,7 +240,6 @@ transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
   animation-fill-mode: forwards;
 }
 
-/* Transformação inicial para as letras que NÃO são a última */
 .banner-title span.not-last-char {
   transform: translate(30px, 100%);
 }
@@ -324,11 +319,9 @@ transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
   margin: 80px 0;
 }
 
-/* Estilo específico para o título da seção de parceiros */
 .partners-section .section-title {
   text-align: center;
-  margin-bottom: 60px; /* Margem específica desta seção */
-  /* Herda fonte, tamanho, peso e cor do .section-title base */
+  margin-bottom: 60px;
 }
 
 .carrossel-container {
@@ -365,8 +358,12 @@ transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
 
 .carrossel-item img[alt*="Red Bull"] {
   object-fit: contain;
-  /* object-fit: cover; */
-  /* object-position: center center;  Ajuste aqui */
+}
+.carrossel-item img[alt*="Dreams Intercâmbios"] {
+  object-fit: contain;
+}
+.carrossel-item img[alt*="Stone"] {
+  object-fit: contain;
 }
 
 .carrossel-item img#ambev {
@@ -564,7 +561,7 @@ transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
 .stat-desc {
   font-family: var(--font-roboto-mono);
   font-size: 0.9rem;
-  color: var(--p4);
+  color: var(--p6);
   line-height: 1.6;
 }
 
