@@ -1,5 +1,4 @@
 // MENU HAMBURGUER
-
 document.addEventListener('DOMContentLoaded', () => {
     const htmlElement = document.documentElement; // <<< SELECIONAR HTML
     const body = document.body;
@@ -19,21 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Fechar o menu ao clicar em um link
-    if (navLinks && body && htmlElement) { // Adicionado htmlElement
-      navLinks.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-          if (header.classList.contains('menu-active')) {
-            header.classList.remove('menu-active');
-            body.classList.remove('overlay-active');
-            htmlElement.classList.remove('overlay-active'); // <<< ADICIONADO Remover do HTML
-            menuToggle.setAttribute('aria-expanded', 'false');
-          }
+    if (navLinks && body && htmlElement) {
+        navLinks.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (header.classList.contains('menu-active')) {
+                    header.classList.remove('menu-active');
+                    body.classList.remove('overlay-active');
+                    htmlElement.classList.remove('overlay-active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
         });
-      });
     }
-
-     // Atributo aria-expanded inicial
-     // ... (resto do JS) ...
 });
 
 // ANIMAÇÃO CARROSSEL 
