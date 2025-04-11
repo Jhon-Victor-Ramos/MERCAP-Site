@@ -1,16 +1,16 @@
 // MENU HAMBURGUER
 document.addEventListener('DOMContentLoaded', () => {
-    const htmlElement = document.documentElement; // <<< SELECIONAR HTML
+    const htmlElement = document.documentElement;
     const body = document.body;
     const header = document.querySelector('.header');
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    if (menuToggle && header && body && htmlElement) { // Adicionado htmlElement
+    if (menuToggle && header && body && htmlElement) {
         menuToggle.addEventListener('click', () => {
             header.classList.toggle('menu-active');
             body.classList.toggle('overlay-active');
-            htmlElement.classList.toggle('overlay-active'); // <<< ADICIONADO Toggle no HTML
+            htmlElement.classList.toggle('overlay-active');
 
             const isExpanded = header.classList.contains('menu-active');
             menuToggle.setAttribute('aria-expanded', isExpanded);
@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
             span.textContent = char;
             span.style.animationDelay = `${index * delayIncrement}s`;
 
-            // <<< ADICIONADO: Adicionar classe se NÃO for o último caractere >>>
             if (index < titleText.length - 1) {
                 span.classList.add('not-last-char');
             }
@@ -107,6 +106,49 @@ document.addEventListener('DOMContentLoaded', () => {
             titleElement.appendChild(span);
         });
     }
+
+    // ANIMAÇAO TEXTO DESCRITIVO
+    document.body.classList.add('js-loading');
+
+    const bannerTextElement = document.querySelector('.banner-text');
+
+    if (bannerTextElement) {
+        const originalHTML = bannerTextElement.innerHTML;
+        const words = originalHTML.split(/(\s+)/).filter(word => word.trim().length > 0 || word.match(/\s+/));
+
+        bannerTextElement.textContent = '';
+
+        let currentDelay = 0.5;
+        const delayIncrementWord = 0.08;
+
+        words.forEach((wordOrSpace, index) => {
+            if (wordOrSpace.match(/\s+/)) {
+                bannerTextElement.insertAdjacentHTML('beforeend', wordOrSpace);
+            } else {
+                const span = document.createElement('span');
+                span.classList.add('word-reveal');
+                span.innerHTML = wordOrSpace;
+                span.style.animationDelay = `${currentDelay}s`;
+                bannerTextElement.appendChild(span);
+
+                if (index + 1 < words.length && !words[index + 1].match(/\s+/)) {
+                    bannerTextElement.insertAdjacentHTML('beforeend', ' ');
+                }
+
+                currentDelay += delayIncrementWord;
+            }
+        });
+        setTimeout(() => {
+            document.body.classList.remove('js-loading');
+        }, 100);
+
+    } else {
+        console.warn("Elemento .banner-text não encontrado para animação de palavras.");
+        document.body.classList.remove('js-loading');
+    }
+    window.onload = () => document.body.classList.remove('js-loading');
+
+
 });
 
 // ANIMAÇÃO NOSSOS PILARES

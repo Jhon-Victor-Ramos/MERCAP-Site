@@ -54,6 +54,9 @@ html.overlay-active {
 body.overlay-active {
   overflow: hidden;
 }
+body.js-loading .banner-text {
+  opacity: 0;
+}
 
 /* === Estilos Base para Componentes Comuns === */
 
@@ -185,7 +188,7 @@ transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
   position: relative;
   width: 100%;
   height: 28rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/event-first-section.png') center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url('images/event-banner.jpg') center/cover;
   padding-top: 4rem;
 }
 
@@ -201,7 +204,7 @@ transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
   position: absolute;
   right: 1.5rem;
   top: 1rem;
-  opacity: 50%;
+  opacity: 70%;
   max-width: 100px;
 }
 
@@ -266,6 +269,21 @@ transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
   color: var(--w);
   max-width: 528px;
   margin-top: -1rem;
+  opacity: 1;
+}
+
+.banner-text .word-reveal {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInWord 0.5s ease-out forwards;
+}
+
+@keyframes fadeInWord {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mercap-logo img {
@@ -316,12 +334,12 @@ transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
 
 /* === EMPRESAS PARCEIRAS === */
 .partners-section {
-  margin: 80px 0;
+  margin: 3rem 0 2rem;
 }
 
 .partners-section .section-title {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 2rem;
 }
 
 .carrossel-container {
@@ -359,15 +377,23 @@ transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
 .carrossel-item img[alt*="Red Bull"] {
   object-fit: contain;
 }
+.carrossel-item img[alt*="Cervejaria Ambev"] {
+  object-fit: cover;
+}
 .carrossel-item img[alt*="Dreams Intercâmbios"] {
   object-fit: contain;
 }
 .carrossel-item img[alt*="Stone"] {
   object-fit: contain;
 }
-
-.carrossel-item img#ambev {
+.carrossel-item img[alt*="Praso"] {
+  object-fit: contain;
+}
+.carrossel-item img[alt*="Michael Page"] {
   object-fit: cover;
+}
+.carrossel-item img[alt*="Deloitte"] {
+  object-fit: contain;
 }
 
 @keyframes carrossel {
@@ -377,7 +403,6 @@ transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
 
 /* === OBJETIVOS === */
 .objectives-section {
-  padding: 4rem 0;
   background: var(--w);
   max-width: 1440px;
   margin: 0 auto;
@@ -446,17 +471,12 @@ transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
   z-index: 2;
 }
 
-/* Estilo específico para o cabeçalho da seção diferencial */
 .diferencial-section .section-header {
-   margin-bottom: 2rem; /* Sobrescreve a margem padrão */
-   /* Ajustes adicionais se necessários para layout com imagem */
+  margin-bottom: 2rem;
 }
 
-/* Estilo específico para o título na seção diferencial */
 .diferencial-section .section-title {
-  color: var(--w); /* Cor branca por causa do fundo escuro */
-  /* Herda fonte, tamanho, peso do base */
-  /* margin-bottom é controlado pelo .section-header acima */
+  color: var(--w);
 }
 
 .diferencial-text {
@@ -914,7 +934,7 @@ transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
     z-index: 1001;
   }
 
-  .banner { height: auto; min-height: 82vh; padding: 5rem 0; }
+  .banner { height: auto; min-height: 65vh; padding: 3.5rem 0; }
   .banner-content { flex-direction: column; padding: 0 3rem; gap: 2rem; text-align: center; }
   .banner-title { font-size: 2rem; margin-bottom: 1.5rem; }
   .banner-title::after { left: 50%; transform: translateX(-50%); width: 12rem; }
