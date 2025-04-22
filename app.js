@@ -194,3 +194,18 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animation);
     }
 });
+
+// --- ATUALIZAR ANO NO FOOTER ---
+function updateFooterYear() {
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+}
+
+updateFooterYear();
+setupMenu();
+animateBannerTitle();
+animateBannerText();
+setupCarousel();
+setupNumberAnimation();

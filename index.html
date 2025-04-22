@@ -11,10 +11,10 @@
     <!-- SEÇÃO HEADER -->
     <header class="header">
         <a href="#" class="logo">MERCAP</a>
-        <button class="menu-toggle">
-            <span class="hamburger"></span>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-navigation">
+            <span class="hamburger" aria-hidden="true"></span>
         </button>
-        <nav class="nav-links">
+        <nav class="nav-links" aria-label="Navegação do Rodapé">
             <a href="#" class="nav-link">Início</a>
             <a href="#" class="nav-link">Sobre</a>
             <a href="#" class="nav-link">Soluções</a>
@@ -23,237 +23,234 @@
         </nav>
     </header>
 
-    <!-- SEÇÃO BANNER -->
-    <section class="banner">
-        <div class="banner-content">
-            <img class="deco-square" src="images/deco-square.svg" alt="Elemento Decorativo">
-            <div class="text-content">
-                <h1 class="banner-title" id="animated-title"></h1>
-                <p class="banner-text">
-                    O MERCAP é uma feira de recrutamento e seleção inovadora, com foco em empreendedorismo, tecnologia e inovação. Seu objetivo é conectar jovens talentos ao mercado de trabalho, proporcionando oportunidades únicas de networking e desenvolvimento profissional.
-                </p>
-            </div>
-            <div class="mercap-logo">
-                <img src="images/Group.svg" alt="Mercap Logo">
-            </div>
-        </div>
-        <div class="section-divider">
-            <div class="divisor-container">
-                <div class="divisor-circle">
-                    <img src="images/Divisória.svg" alt="Ícone de divisória" class="divisor-icon">
+    <!-- SEÇÃO MAIN -->
+    <main>
+        <!-- SEÇÃO BANNER -->
+        <section class="banner" aria-labelledby="banner-heading">
+            <div class="banner-content">
+                <img class="deco-square" src="images/deco-square.svg" alt="Elemento Decorativo">
+                <div class="text-content">
+                    <h1 class="banner-title" id="animated-title"></h1>
+                    <p class="banner-text">
+                        O MERCAP é uma feira de recrutamento e seleção inovadora, com foco em empreendedorismo, tecnologia e inovação. Seu objetivo é conectar jovens talentos ao mercado de trabalho, proporcionando oportunidades únicas de networking e desenvolvimento profissional.
+                    </p>
+                </div>
+                <div class="mercap-logo">
+                    <img src="images/Group.svg" alt="Mercap Logo">
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO EMPRESAS PARCEIRAS -->
-    <section class="partners-section">
-        <!-- H2 agora usa a classe padronizada 'section-title' -->
-        <h2 class="section-title">As melhores estão aqui!</h2>
-        <div class="carrossel-container">
-            <div class="carrossel-track">
-                <!-- LOGO - REDBULL -->
-                <div class="carrossel-item">
-                    <img src="images/partner companies/red_bull-logo.svg" alt="Logo da Red Bull">
-                </div>
-                <!-- LOGO - BANCO INTER -->
-                <div class="carrossel-item">
-                    <img src="images/partner companies/banco_inter-logo.svg" alt="Logo do Inter">
-                </div>
-                <!-- LOGO - CERVEJARIA AMBEV -->
-                <div class="carrossel-item">
-                    <img src="images/partner companies/cervejaria_ambev-logo.svg" alt="Logo da Cervejaria Ambev">
-                </div>
-                <!-- LOGO - DREAMS INTERCÂMBIOS -->
-                <div class="carrossel-item">
-                    <img src="images/partner companies/dreams_intercambios-logo.svg" alt="Logo da Dreams Intercâmbios">
-                </div>
-                <!-- LOGO - STONE -->
-                <div class="carrossel-item">
-                    <img src="images/partner companies/stone-logo.svg" alt="Logo da Stone">
-                </div>
-                <!-- LOGO - PRASO -->
-                <div class="carrossel-item">
-                    <img src="images/partner companies/praso-logo.svg" alt="Logo da Praso">
-                </div>
-                <!-- LOGO - MICHAEL PAGE -->
-                <div class="carrossel-item">
-                    <img src="images/partner companies/michael_page-logo.svg" alt="Logo da Michael Page">
-                </div>
-                <!-- LOGO - DELOITTE -->
-                <div class="carrossel-item">
-                    <img src="images/partner companies/deloitte-logo.svg" alt="Logo da Deloitte">
-                </div>
-                <!-- LOGO - DA FONTE ADVOGADOS -->
-                <div class="carrossel-item">
-                    <img src="images/partner companies/da_fonte-logo.svg" alt="Logo do Da Fonte Advogados">
-                </div>
-                <!-- LOGO - PARTEM -->
-                <div class="carrossel-item">
-                    <img src="images/partner companies/partem-logo.svg" alt="Logo da Partem">
-                </div>
-                <!-- LOGO - MERCEDES BENZ -->
-                <div class="carrossel-item">
-                    <img src="images/partner companies/mercedes_benz-logo.svg" alt="Logo da Mercedes Benz">
-                </div>
-                <!-- LOGO - SEBRAE -->
-                <div class="carrossel-item">
-                    <img src="images/partner companies/sebrae-logo.svg" alt="Logo do SEBRAE">
+            <div class="section-divider">
+                <div class="divisor-container">
+                    <div class="divisor-circle">
+                        <img src="images/Divisória.svg" alt="Ícone de divisória" class="divisor-icon">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO OBJETIVOS -->
-    <section class="objectives-section">
-        <!-- O container do header agora usa a classe padronizada 'section-header' -->
-        <div class="section-header">
-            <span class="diferencial"></span>
-            <!-- H2 já usava 'section-title' -->
-            <h2 class="section-title">Objetivos</h2>
-        </div>
-        <div class="objectives-grid">
-            <!-- Card 1 -->
-            <article class="objective-card">
-                <h3 class="card-title">Conexão de Talentos e Empresas</h3>
-                <p class="card-text">Criar um <b>ponto de encontro eficaz</b> entre estudantes/jovens profissionais e <b>empresas em busca de novos talentos</b>, facilitando o recrutamento e a seleção.</p>
-            </article>
-            <!-- Card 2 -->
-            <article class="objective-card">
-                <h3 class="card-title">Desenvolvimento de Habilidades</h3>
-                <p class="card-text">Oferecer oportunidades de <b>aprendizado</b> e <b>desenvolvimento</b> de habilidades (<i>soft skills</i> e <i>hard skills</i>) através de palestras e workshops.</p>
-            </article>
-            <!-- Card 3 -->
-            <article class="objective-card">
-                <h3 class="card-title">Fomento do Empreendedorismo</h3>
-                <p class="card-text"><b>Inspirar e capacitar jovens</b> a desenvolverem uma <i>mentalidade empreendedora</i>, oferecendo recursos e <i>networking</i> para futuros empreendedores..</p>
-            </article>
-            <!-- Card 4 -->
-            <article class="objective-card">
-                <h3 class="card-title">Visibilidade e Branding</h3>
-                <p class="card-text">Promover a imagem e o <i>branding</i> das empresas participantes, mostrando seu apoio à educação e ao desenvolvimento de jovens talentos.</p>
-            </article>
-        </div>
-    </section>
-
-    <!-- SEÇÃO NOSSO DIFERENCIAL -->
-    <section class="diferencial-section">
-        <div class="diferencial-container">
-            <!-- Conteúdo Textual -->
-            <div class="diferencial-content">
-                <!-- Adicionado um 'section-header' para agrupar span e h2, como nas outras seções -->
+        </section>
+        <!-- SEÇÃO EMPRESAS PARCEIRAS -->
+        <section class="partners-section" aria-labelledby="partners-heading">
+            <!-- H2 agora usa a classe padronizada 'section-title' -->
+            <h2 class="section-title">As melhores estão aqui!</h2>
+            <div class="carrossel-container" aria-label="Carrossel de empresas parceiras">
+                <div class="carrossel-track">
+                    <!-- LOGO - REDBULL -->
+                    <div class="carrossel-item">
+                        <img src="images/partner companies/red_bull-logo.svg" alt="Logo da Red Bull">
+                    </div>
+                    <!-- LOGO - BANCO INTER -->
+                    <div class="carrossel-item">
+                        <img src="images/partner companies/banco_inter-logo.svg" alt="Logo do Inter">
+                    </div>
+                    <!-- LOGO - CERVEJARIA AMBEV -->
+                    <div class="carrossel-item">
+                        <img src="images/partner companies/cervejaria_ambev-logo.svg" alt="Logo da Cervejaria Ambev">
+                    </div>
+                    <!-- LOGO - DREAMS INTERCÂMBIOS -->
+                    <div class="carrossel-item">
+                        <img src="images/partner companies/dreams_intercambios-logo.svg" alt="Logo da Dreams Intercâmbios">
+                    </div>
+                    <!-- LOGO - STONE -->
+                    <div class="carrossel-item">
+                        <img src="images/partner companies/stone-logo.svg" alt="Logo da Stone">
+                    </div>
+                    <!-- LOGO - PRASO -->
+                    <div class="carrossel-item">
+                        <img src="images/partner companies/praso-logo.svg" alt="Logo da Praso">
+                    </div>
+                    <!-- LOGO - MICHAEL PAGE -->
+                    <div class="carrossel-item">
+                        <img src="images/partner companies/michael_page-logo.svg" alt="Logo da Michael Page">
+                    </div>
+                    <!-- LOGO - DELOITTE -->
+                    <div class="carrossel-item">
+                        <img src="images/partner companies/deloitte-logo.svg" alt="Logo da Deloitte">
+                    </div>
+                    <!-- LOGO - DA FONTE ADVOGADOS -->
+                    <div class="carrossel-item">
+                        <img src="images/partner companies/da_fonte-logo.svg" alt="Logo do Da Fonte Advogados">
+                    </div>
+                    <!-- LOGO - PARTEM -->
+                    <div class="carrossel-item">
+                        <img src="images/partner companies/partem-logo.svg" alt="Logo da Partem">
+                    </div>
+                    <!-- LOGO - MERCEDES BENZ -->
+                    <div class="carrossel-item">
+                        <img src="images/partner companies/mercedes_benz-logo.svg" alt="Logo da Mercedes Benz">
+                    </div>
+                    <!-- LOGO - SEBRAE -->
+                    <div class="carrossel-item">
+                        <img src="images/partner companies/sebrae-logo.svg" alt="Logo do SEBRAE">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SEÇÃO OBJETIVOS -->
+        <section class="objectives-section" aria-labelledby="objectives-heading">
+            <!-- O container do header agora usa a classe padronizada 'section-header' -->
+            <div class="section-header" aria-hidden="true">
+                <span class="diferencial"></span>
+                <!-- H2 já usava 'section-title' -->
+                <h2 class="section-title">Objetivos</h2>
+            </div>
+            <div class="objectives-grid">
+                <!-- Card 1 -->
+                <article class="objective-card">
+                    <h3 class="card-title">Conexão de Talentos e Empresas</h3>
+                    <p class="card-text">Criar um <b>ponto de encontro eficaz</b> entre estudantes/jovens profissionais e <b>empresas em busca de novos talentos</b>, facilitando o recrutamento e a seleção.</p>
+                </article>
+                <!-- Card 2 -->
+                <article class="objective-card">
+                    <h3 class="card-title">Desenvolvimento de Habilidades</h3>
+                    <p class="card-text">Oferecer oportunidades de <b>aprendizado</b> e <b>desenvolvimento</b> de habilidades (<i>soft skills</i> e <i>hard skills</i>) através de palestras e workshops.</p>
+                </article>
+                <!-- Card 3 -->
+                <article class="objective-card">
+                    <h3 class="card-title">Fomento do Empreendedorismo</h3>
+                    <p class="card-text"><b>Inspirar e capacitar jovens</b> a desenvolverem uma <i>mentalidade empreendedora</i>, oferecendo recursos e <i>networking</i> para futuros empreendedores..</p>
+                </article>
+                <!-- Card 4 -->
+                <article class="objective-card">
+                    <h3 class="card-title">Visibilidade e Branding</h3>
+                    <p class="card-text">Promover a imagem e o <i>branding</i> das empresas participantes, mostrando seu apoio à educação e ao desenvolvimento de jovens talentos.</p>
+                </article>
+            </div>
+        </section>
+        <!-- SEÇÃO NOSSO DIFERENCIAL -->
+        <section class="diferencial-section" aria-labelledby="diferencial-heading">
+            <div class="diferencial-container">
+                <!-- Conteúdo Textual -->
+                <div class="diferencial-content">
+                    <!-- Adicionado um 'section-header' para agrupar span e h2, como nas outras seções -->
+                    <div class="section-header">
+                        <span class="diferencial" aria-hidden="true"></span>
+                        <!-- H2 agora usa a classe padronizada 'section-title' -->
+                        <h2 class="section-title">Nosso diferencial</h2>
+                    </div>
+                    <div class="diferencial-text">
+                        <p>O MERCAP se distingue por promover um ambiente de inovação e empreendedorismo, reunindo empresas que buscam mentes criativas e jovens que desejam construir seus próprios caminhos. Mais do que um simples encontro, a MERCAP é uma plataforma de lançamento para novas ideias, projetos e <i>startups</i>, incentivando a colaboração, o <i>networking</i> e a busca por soluções inovadoras para os desafios do mercado.</p>
+                    </div>
+                </div>
+                <!-- Imagem que "vaza" da seção -->
+                <div class="diferencial-image">
+                    <img src="images/event-diferential-section.jpg" alt="Imagem de uma palestra no evento">
+                </div>
+            </div>
+        </section>
+        <!-- SEÇÃO NOSSOS PILARES -->
+        <section class="pillars-section" aria-labelledby="pillars-heading">
+            <div class="pillars-section-wrapper">
+                <div class="section-header">
+                    <span class="diferencial" aria-hidden="true"></span>
+                    <h2 class="section-title">Nossos pilares</h2>
+                </div>
+                <div class="pillars-container">
+                    <img src="images/Pilares.svg" alt="Infográfico ilustrando os pilares: Democratizar a informação, Desenvolver, Inspirar, Inovar">
+                    <div class="stats-grid">
+                        <!-- Card 1: Palestras -->
+                        <div class="stat-card">
+                            <div class="stat-icon" aria-hidden="true">🎤</div>
+                            <div class="stat-number" data-target="130">0</div>
+                            <div class="stat-title"><b>Palestras</b></div>
+                            <p class="stat-desc">Total de apresentações</p>
+                        </div>
+                        <!-- Card 2: Empresas -->
+                        <div class="stat-card">
+                            <div class="stat-icon" aria-hidden="true">🏢</div>
+                            <div class="stat-number" data-target="95">0</div>
+                            <div class="stat-title"><b>Empresas</b></div>
+                            <p class="stat-desc">Parceiras ao longo das edições</p>
+                        </div>
+                        <!-- Card 3: Público -->
+                        <div class="stat-card">
+                            <div class="stat-icon" aria-hidden="true">👥</div>
+                            <div class="stat-number" data-target="13910">0</div>
+                            <div class="stat-title"><b>Público</b></div>
+                            <p class="stat-desc">Alcance total do evento</p>
+                        </div>
+                        <!-- Card 4: Edições -->
+                        <div class="stat-card">
+                            <div class="stat-icon" aria-hidden="true">📆</div>
+                            <div class="stat-number" data-target="5">0</div>
+                            <div class="stat-title"><b>Edições</b></div>
+                            <p class="stat-desc">Histórico de realização</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SEÇÃO EXPERIÊNCIA DE CLIENTES    -->
+        <section class="clients-section" aria-labelledby="clients-heading">
+            <div class="section-header-wrapper">
                 <div class="section-header">
                     <span class="diferencial"></span>
-                    <!-- H2 agora usa a classe padronizada 'section-title' -->
-                    <h2 class="section-title">Nosso diferencial</h2>
-                </div>
-                <div class="diferencial-text">
-                    <p>O MERCAP se distingue por promover um ambiente de inovação e empreendedorismo, reunindo empresas que buscam mentes criativas e jovens que desejam construir seus próprios caminhos. Mais do que um simples encontro, a MERCAP é uma plataforma de lançamento para novas ideias, projetos e <i>startups</i>, incentivando a colaboração, o <i>networking</i> e a busca por soluções inovadoras para os desafios do mercado.</p>
+                    <h2 class="section-title">Experiência de antigos clientes</h2>
                 </div>
             </div>
-            <!-- Imagem que "vaza" da seção -->
-            <div class="diferencial-image">
-                <img src="images/event-diferential-section.jpg" alt="Imagem de uma palestra no evento">
-            </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO NOSSOS PILARES -->
-    <section class="pillars-section">
-        <div class="pillars-section-wrapper">
-            <div class="section-header">
-                <span class="diferencial"></span>
-                <h2 class="section-title">Nossos pilares</h2>
-            </div>
-            <div class="pillars-container">
-                <img src="images/Pilares.svg" alt="Pilares do MERCAP" srcset="">
-                <div class="stats-grid">
-                    <!-- Card 1: Palestras -->
-                    <div class="stat-card">
-                        <div class="stat-icon">🎤</div>
-                        <div class="stat-number" data-target="130">0</div>
-                        <div class="stat-title"><b>Palestras</b></div>
-                        <p class="stat-desc">Total de apresentações</p>
-                    </div>
-                    <!-- Card 2: Empresas -->
-                    <div class="stat-card">
-                        <div class="stat-icon">🏢</div>
-                        <div class="stat-number" data-target="95">0</div>
-                        <div class="stat-title"><b>Empresas</b></div>
-                        <p class="stat-desc">Parceiras ao longo das edições</p>
-                    </div>
-                    <!-- Card 3: Público -->
-                    <div class="stat-card">
-                        <div class="stat-icon">👥</div>
-                        <div class="stat-number" data-target="13910">0</div>
-                        <div class="stat-title"><b>Público</b></div>
-                        <p class="stat-desc">Alcance total do evento</p>
-                    </div>
-                    <!-- Card 4: Edições -->
-                    <div class="stat-card">
-                        <div class="stat-icon">📆</div>
-                        <div class="stat-number" data-target="5">0</div>
-                        <div class="stat-title"><b>Edições</b></div>
-                        <p class="stat-desc">Histórico de realização</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO EXPERIÊNCIA DE CLIENTES    -->
-    <section class="clients-section">
-        <div class="section-header-wrapper">
-            <div class="section-header">
-                <span class="diferencial"></span>
-                <h2 class="section-title">Experiência de antigos clientes</h2>
-            </div>
-        </div>
-        <div class="testimonials-background">
-            <div class="testimonials-container">
-                <!-- Depoimento 1: Mairo Ventura -->
-                <article class="testimonial-card">
-                    <div class="testimonial-image">
-                        <img src="images/mairo-ventura.png" alt="Foto de Mairo Ventura, Sócio da Orbit Talent">
-                    </div>
-                    <div class="testimonial-content">
-                        <blockquote>
-                            <p>Minha experiência como empresa parceria do Mercap foi incrível! O contato do time pré evento, a organização e toda infraestrutura preparada para receber as empresas e alunos foi espetacular. Tivemos um excelente aproveito tanto de público como também de alunos qualificados para nosso banco de talentos. Recomendo sem sobra de dúvidas e com certeza a Orbit participará mais vezes! O Mercap é o evento do futuro do trabalho!</p>
-                        </blockquote>
-                        <div class="testimonial-author">
-                            <img class="author-icon" src="images/Person.svg" alt="Ícone de pessoa">
-                            <p class="author-info">Mairo Ventura, Sócio da Orbit Talent</p>
+            <div class="testimonials-background">
+                <div class="testimonials-container">
+                    <!-- Depoimento 1: Mairo Ventura -->
+                    <article class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="images/mairo-ventura.png" alt="Foto de Mairo Ventura, Sócio da Orbit Talent">
                         </div>
-                    </div>
-                </article>
-
-                <!-- Depoimento 2: Ana Catarina Leão -->
-                <article class="testimonial-card testimonial-card--reversed">
-                    <div class="testimonial-image">
-                        <img src="images/mairo-ventura.png" alt="Foto de Ana Catarina Leão, Gerente de Gente e Gestão da Ambev">
-                    </div>
-                    <div class="testimonial-content">
-                        <blockquote>
-                            <p>A Ambev teve uma experiência positiva no MERCAP 2023, interagindo com estudantes e divulgando sua cultura focada em inovação e desenvolvimento. A empresa vê o evento como crucial para conectar academia e mercado, inspirar líderes e fortalecer laços, mais do que apenas recrutar. A Ambev pretende continuar participando para apoiar o desenvolvimento profissional dos estudantes.</p>
-                        </blockquote>
-                        <div class="testimonial-author">
-                            <img class="author-icon" src="images/Person.svg" alt="Ícone de pessoa">
-                            <p class="author-info">Ana Catarina Leão, Gerente de Gente e Gestão da Ambev</p>
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p>Minha experiência como empresa parceria do Mercap foi incrível! O contato do time pré evento, a organização e toda infraestrutura preparada para receber as empresas e alunos foi espetacular. Tivemos um excelente aproveito tanto de público como também de alunos qualificados para nosso banco de talentos. Recomendo sem sobra de dúvidas e com certeza a Orbit participará mais vezes! O Mercap é o evento do futuro do trabalho!</p>
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <img class="author-icon" src="images/Person.svg" alt="Ícone de pessoa">
+                                <p class="author-info">Mairo Ventura, Sócio da Orbit Talent</p>
+                            </div>
                         </div>
-                    </div>
-                </article>
-            </div> <!-- Fim .testimonials-container -->
-        </div> <!-- Fim .testimonials-background -->
-    </section>
+                    </article>
+                    <!-- Depoimento 2: Ana Catarina Leão -->
+                    <article class="testimonial-card testimonial-card--reversed">
+                        <div class="testimonial-image">
+                            <img src="images/mairo-ventura.png" alt="Foto de Ana Catarina Leão, Gerente de Gente e Gestão da Ambev">
+                        </div>
+                        <div class="testimonial-content">
+                            <blockquote>
+                                <p>A Ambev teve uma experiência positiva no MERCAP 2023, interagindo com estudantes e divulgando sua cultura focada em inovação e desenvolvimento. A empresa vê o evento como crucial para conectar academia e mercado, inspirar líderes e fortalecer laços, mais do que apenas recrutar. A Ambev pretende continuar participando para apoiar o desenvolvimento profissional dos estudantes.</p>
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <img class="author-icon" src="images/Person.svg" alt="Ícone de pessoa">
+                                <p class="author-info">Ana Catarina Leão, Gerente de Gente e Gestão da Ambev</p>
+                            </div>
+                        </div>
+                    </article>
+                </div> <!-- Fim .testimonials-container -->
+            </div> <!-- Fim .testimonials-background -->
+        </section>
+    </main>
 
     <!-- SEÇÃO FOOTER -->
-    <footer class="site-footer">
+    <footer class="site-footer" aria-labelledby="footer-heading">
         <div class="footer-container">
             <!-- Coluna 1: Logo e Mapa -->
             <div class="footer-column footer-col--logo-map">
                 <a href="#" class="footer-logo">Mercap</a>
                 <div class="footer-map">
-                    <img src="images/placeholder-map.png" alt="Mapa mostrando localização aproximada">
+                    <img src="images/placeholder-map.png" alt="Mapa mostrando localização aproximada na Rua do Príncipe, Recife">
                 </div>
             </div>
             <!-- Coluna 2: Contato e Redes Sociais -->
@@ -268,7 +265,7 @@
                         PE, 50050-425
                     </p>
                 </div>
-                <ul class="social-links">
+                <ul class="social-links" role="list">
                     <li class="social-item">
                         <a href="#" class="social-link" aria-label="Facebook">
                             <img src="images/Facebook.svg" alt="Facebook">
@@ -289,8 +286,8 @@
             <!-- Coluna 3: Informações/Navegação -->
             <div class="footer-column footer-col--info">
                 <h4 class="footer-title">INFORMAÇÕES</h4>
-                <nav class="footer-nav">
-                    <ul>
+                <nav class="footer-nav" aria-label="Navegação do Rodapé">
+                    <ul role="list">
                         <li><a href="#">Sobre</a></li>
                         <li><a href="#">Soluções</a></li>
                         <li><a href="#">Mercap</a></li>
@@ -299,9 +296,9 @@
                 </nav>
             </div>
         </div>
-        <!-- <div class="footer-bottom-bar">
-            <p>© 2024 Mercap. Todos os direitos reservados.</p>
-        </div> -->
+        <div class="footer-bottom-bar">
+            <p>© <span id="current-year"></span> Mercap. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <!-- SCRIPTS (Existente) -->
