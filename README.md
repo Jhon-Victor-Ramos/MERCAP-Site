@@ -27,8 +27,8 @@ Esse é o site oficial do evento anual MERCAP, uma iniciativa que conecta jovens
 
 ## Próximos Passos
 
-* [ ] Adicionar ARIA labels e melhorar acessibilidade
-* [ ] Finalizar responsividade
+* [x] Adicionar ARIA labels e melhorar acessibilidade
+* [x] Finalizar responsividade
 * [x] Otimizar imagens e melhorar performance
 * [x] Consertar animação do título do banner
 * [x] Adicionar animação do texto do banner
